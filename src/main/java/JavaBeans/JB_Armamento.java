@@ -4,8 +4,8 @@ import java.io.Serializable;
 public class JB_Armamento implements Serializable{
 	private String id_ceo;
 	private String tipo;
-	private String cantidad;
-	private String id_h;
+	private int cantidad;
+	private int id_h;
 
 	public JB_Armamento() {
 		
@@ -15,8 +15,8 @@ public class JB_Armamento implements Serializable{
 			
 			String id_ceo,
 			String tipo,
-			String cantidad,
-			String id_h
+			int cantidad,
+			int id_h
 			
 			) {
 			
@@ -48,20 +48,20 @@ public class JB_Armamento implements Serializable{
 	}
 
 	// Getter y Setter Cantidad
-	public String getCantidad() {
+	public int getCantidad() {
 	    return cantidad;
 	}
 	
-	public void setCantidad(String cantidad) {
+	public void setCantidad(int cantidad) {
 	    this.cantidad = cantidad;
 	}
 
 	// Getter y Setter id_h
-	public String getIdH() {
+	public int getIdH() {
 	    return id_h;
 	}
 
-	public void setIdH(String idH) {
+	public void setIdH(int idH) {
 	    this.id_h = idH;
 	}
 
