@@ -127,10 +127,10 @@ public class DAO_Agentes {
 			conn = Conexion.getConnection();
 			state = conn.prepareStatement(updateSQL);
 			
-			state.setInt(1,Agentes.getIdAgent());
-			state.setString(2,Agentes.getNombre());
-			state.setString(3,Agentes.getEspecializacion());
-			state.setString(4,Agentes.getPuesto());
+			state.setString(1,Agentes.getNombre());
+			state.setString(2,Agentes.getEspecializacion());
+			state.setString(3,Agentes.getPuesto());
+			state.setInt(4,Agentes.getIdAgent());
 			
 			registros = state.executeUpdate();
 			if(registros>0) {
