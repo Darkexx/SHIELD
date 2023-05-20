@@ -11,6 +11,16 @@ public class JB_Heroes implements Serializable{
 		
 	}
 	
+public JB_Heroes(
+			
+			int id_h
+			
+			) {
+			
+		this.id_h=id_h;
+			
+	}
+	
 	public JB_Heroes(
 			
 			int id_h,

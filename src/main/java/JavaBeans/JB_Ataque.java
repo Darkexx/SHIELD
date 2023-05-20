@@ -12,6 +12,17 @@ public class JB_Ataque implements Serializable{
 		
 	}
 	
+public JB_Ataque(
+			
+			String id_at
+			
+			) {
+			
+		this.id_at=id_at;
+			
+	}
+	
+	
 	public JB_Ataque(
 			
 			String id_at,

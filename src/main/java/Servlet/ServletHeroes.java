@@ -14,12 +14,12 @@ import java.util.*;
 import java.util.logging.*;
 
 import Datos.Conexion;
-import JavaBeans.JB_Armamento;
-import Datos.DAO_Armamento;
+import JavaBeans.JB_Heroes;
+import Datos.DAO_Heroes;
 
-@WebServlet(name = "ServletArmamento", urlPatterns = {"/ServletArmamento"})
+@WebServlet(name = "ServletHeroes", urlPatterns = {"/ServletHeroes"})
 
-public class ServletArmamento extends HttpServlet{
+public class ServletHeroes extends HttpServlet{
 	
 	//-----Get-----
 	protected void doGet(HttpServletRequest rq, HttpServletResponse rp) throws IOException, ServletException{
@@ -27,8 +27,8 @@ public class ServletArmamento extends HttpServlet{
 		
 		if(opc.equals("list")) {
 			
-			DAO_Armamento armdao = new DAO_Armamento();
-			List<JB_Armamento> lista = armdao.seleccionar();
+			DAO_Heroes herdao = new DAO_Heroes();
+			List<JB_Heroes> lista = herdao.seleccionar();
 			rq.setAttribute("lista",lista);
 			rq.getRequestDispatcher("-----Aqui va JSP-----").forward(rq, rp);
 			
@@ -40,24 +40,24 @@ public class ServletArmamento extends HttpServlet{
 			Connection c = con.getConnection();
 			PreparedStatement ps;
 			ResultSet rs;
-			String id_ceo = rq.getParameter("id_ceo");
+			int id_h = Integer.parseInt(rq.getParameter("id_h"));
 			
 			try {
 				
-				String updateSql = "SELECT * FROM armamento WHERE id_ceo = ?";
+				String updateSql = "SELECT * FROM heroes WHERE id_h = ?";
 				ps = c.prepareStatement(updateSql);
-				ps.setString(1, id_ceo);
+				ps.setInt(1, id_h);
 				rs = ps.executeQuery();
-				JB_Armamento arm = new JB_Armamento();
+				JB_Heroes her = new JB_Heroes();
 				while(rs.next()) {
 					
-					arm.setIdCeo(rs.getString("id_ceo"));
-					arm.setTipo(rs.getString("tipo"));
-					arm.setCantidad(rs.getInt("cantidad"));
-					arm.setIdH(rs.getInt("id_h"));
+					her.setIdH(rs.getInt("id_h"));
+					her.setNombre(rs.getString("nombre"));
+					her.setIdL(rs.getInt("id_l"));
+					her.setIdSub(rs.getString("id_sub"));
 					
 				}
-				rq.setAttribute("armamento", arm);
+				rq.setAttribute("heroes", her);
 				rq.getRequestDispatcher("-----Aqui va JSP-----").forward(rq, rp);
 				
 			}catch (SQLException ex) {
@@ -67,11 +67,11 @@ public class ServletArmamento extends HttpServlet{
 		
 		else if(opc.equals("eliminar")) {
 			
-			String id_ceo = rq.getParameter("id_ceo");//Duda
-			JB_Armamento arm = new JB_Armamento(id_ceo);
-			DAO_Armamento armdao = new DAO_Armamento();
-			armdao.borrar(arm);
-			rp.sendRedirect("ServletArmamento");
+			int id_h = Integer.parseInt(rq.getParameter(("id_h")));
+			JB_Heroes her = new JB_Heroes(id_h);
+			DAO_Heroes herdao = new DAO_Heroes();
+			herdao.borrar(her);
+			rp.sendRedirect("ServletHeroes");
 		}	
 	}
 	
@@ -82,15 +82,15 @@ public class ServletArmamento extends HttpServlet{
 		
 		if(op.equals("nuevo")) {
 			
-			String id_ceo = rq.getParameter("id_ceo");
-			String tipo = rq.getParameter("tipo");
-			int cantidad = Integer.parseInt(rq.getParameter("cantidad"));
 			int id_h = Integer.parseInt(rq.getParameter("id_h"));
+			String nombre = rq.getParameter("nombre");
+			int id_l = Integer.parseInt(rq.getParameter("id_l"));
+			String id_sub = rq.getParameter("id_sub");
 			
-			JB_Armamento arma = new JB_Armamento(id_ceo,tipo,cantidad,id_h);
-			DAO_Armamento armadao = new DAO_Armamento();
-			armadao.agregar(arma);
-			rp.sendRedirect("/ServletArmamento");
+			JB_Heroes her = new JB_Heroes(id_h,nombre,id_l,id_sub);
+			DAO_Heroes herdao = new DAO_Heroes();
+			herdao.agregar(her);
+			rp.sendRedirect("/ServletHeroes");
 		}
 		
 	}
