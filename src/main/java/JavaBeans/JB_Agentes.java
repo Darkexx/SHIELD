@@ -11,6 +11,16 @@ public class JB_Agentes implements Serializable{
 		
 	}
 	
+public JB_Agentes(
+			
+			int id_agent
+			
+			) {
+			
+		this.id_agent=id_agent;
+			
+	}
+	
 	public JB_Agentes(
 			
 			int id_agent,

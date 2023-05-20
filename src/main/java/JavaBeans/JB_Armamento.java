@@ -13,6 +13,17 @@ public class JB_Armamento implements Serializable{
 	
 	public JB_Armamento(
 			
+			String id_ceo
+			
+			) {
+			
+		this.id_ceo=id_ceo;
+			
+	}
+	
+	
+	public JB_Armamento(
+			
 			String id_ceo,
 			String tipo,
 			int cantidad,
