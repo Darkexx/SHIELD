@@ -1,6 +1,8 @@
 package Datos;
 
 import JavaBeans.JB_Integrantes;
+import JavaBeans.JB_Heroes;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +12,7 @@ public class DAO_Integrantes {
 	public static final String insertSQL = "INSERT INTO integrantes(id_h,nombre) VALUES (?,?)";
 	public static final String updateSQL = "UPDATE integrantes SET nombre = ? WHERE id_h = ?";
 	public static final String deleteSQL = "DELETE FROM integrantes WHERE id_h = ?";
+	public static final String ConsulHerAgSQL = "select heroes.nombre as Agencia , integrantes.nombre from integrantes join heroes on integrantes.id_h=heroes.id_h";
 	
 	public List<JB_Integrantes> seleccionar(){
 		Connection conn = null;
@@ -51,6 +54,56 @@ public class DAO_Integrantes {
 			return integrantes;
 		
 	}
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	public List<JB_Integrantes> consu(){
+		Connection conn = null;
+		Statement state = null;
+		ResultSet result = null;
+		JB_Integrantes In = null;
+		
+			List<JB_Integrantes> integrantes = new ArrayList<>();
+			
+			try {
+				
+				conn = Conexion.getConnection();
+				state = conn.createStatement();
+				result = state.executeQuery(ConsulHerAgSQL);
+				
+					while(result.next()) {
+						
+						//int id_h = result.getInt("id_h");
+						String nombre = result.getString("Agencia");
+						String nombre2 = result.getString("nombre");
+						
+						In = new JB_Integrantes(nombre,nombre2);
+						integrantes.add(In);
+						
+					}
+					
+					Conexion.close(result);
+					Conexion.close(state);
+					Conexion.close(conn);
+					
+					//JB_Heroes he = new JB_Heroes();
+					JB_Integrantes in = new JB_Integrantes();
+					
+					for(JB_Integrantes c: integrantes) {
+						System.out.println("Agencia: " + c.getNombre());
+						System.out.println("Integrante: " + c.getNombre2());
+						//System.out.println("xD: " + c.getNombre());
+						//System.out.println("Agencia: " + c.);
+						//System.out.println("Nombre: " + he.getNombre());
+					}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			return integrantes;
+		
+	}
+	///////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public int agregar(JB_Integrantes Integrante) {
 		
