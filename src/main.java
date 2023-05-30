@@ -16,6 +16,8 @@ public class main {
 		//DAO_Agentes agdao = new DAO_Agentes();
 		
 		//JB_Integrantes ig = new JB_Integrantes();
+		
+		//Consulta Int/heroes
 		DAO_Integrantes igdao = new DAO_Integrantes();
 		
 		System.out.println(igdao.consu());
