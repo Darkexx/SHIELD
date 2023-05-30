@@ -4,6 +4,7 @@ import java.io.Serializable;
 public class JB_Integrantes implements Serializable{
 	private int id_h;
 	private String nombre;
+	//--Variables para consultas--//
 	private String nombre2;//Variable utilizada para consulta Heroe-Integrante
 
 	public JB_Integrantes() {
