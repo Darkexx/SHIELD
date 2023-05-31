@@ -17,20 +17,31 @@ import Datos.Conexion;
 import JavaBeans.JB_Integrantes;
 import Datos.DAO_Integrantes;
 
-@WebServlet(name = "ServletIntegrantes", urlPatterns = {"/ServletIntegrantes"})
+@WebServlet("/ServletIntegrantes")
 
 public class ServletIntegrantes extends HttpServlet{
 	
-	//-----Get-----
+	
+	private static final long serialVersionUID = 1L;
+
+	
 	protected void doGet(HttpServletRequest rq, HttpServletResponse rp) throws IOException, ServletException{
 		String opc = (rq.getParameter("opc") != null) ? rq.getParameter("opc") : "list";
 		
 		if(opc.equals("list")) {
 			
 			DAO_Integrantes intedao = new DAO_Integrantes();
-			List<JB_Integrantes> lista = intedao.seleccionar();
+			List<JB_Integrantes> lista = intedao.consu();
+			
+			if (lista.isEmpty()) {
+	          	System.out.println("Esta vacio, vez? ");
+	        }
+	        else {
+	        	System.out.println("Aqui hay datos ");
+	        }
+			
 			rq.setAttribute("lista",lista);
-			rq.getRequestDispatcher("-----Aqui va JSP-----").forward(rq, rp);
+			rq.getRequestDispatcher("c_Int_her.jsp").forward(rq, rp);
 			
 		}
 		
@@ -55,8 +66,8 @@ public class ServletIntegrantes extends HttpServlet{
 					Inte.setNombre(rs.getString("nombre"));
 					
 				}
-				rq.setAttribute("integrantes", Inte);
-				rq.getRequestDispatcher("-----Aqui va JSP-----").forward(rq, rp);
+				rq.setAttribute("integrante", Inte);
+				rq.getRequestDispatcher("c_Int_her.jsp").forward(rq, rp);
 				
 			}catch (SQLException ex) {
 				System.out.println("Error en SQL " + ex.getMessage());
