@@ -13,8 +13,12 @@
 <body>
 <h2>Bienvenido a SHIELD</h2>
 
-	<form action="ServletIntegrantes" method="get">
-		<input type="submit" value="Ir a C_Int_her">
+	<form action="indexLidShield.jsp" method="get">
+		<input type="submit" value="Index admin">
+	</form>
+	
+	<form action="indexLidHer.jsp" method="get">
+		<input type="submit" value="Index Lider">
 	</form>
 	
 </body>
