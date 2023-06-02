@@ -52,3 +52,9 @@ insert into agentes(id_agent,nombre,especializacion,puesto) values
 
 insert into involucrados(id_at,id_h,id_agent,fecha) values
 	('siminv19',21,40,'20/03/2019');
+	
+insert into users(id_us,nom_us,pass,roll) values
+	('niF','NickFur','12345','Lider_Shield'),
+	('102','IronM','56789','Lider_Heroes'),
+	('usex','Spidy','usex','Integrante'),
+	('usex2','Arias','usex2','Agente');
