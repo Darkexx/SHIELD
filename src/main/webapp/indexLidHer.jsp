@@ -11,10 +11,14 @@
 
 
 <body>
+
+
+
 <h2>Bienvenido Lider de Heroes</h2>
+<p> Usuario = <% out.print(request.getAttribute("nomlider")); %> </p>
 
 	<form action="ServletIntegrantes" method="get">
-		<input type="submit" value="Ir a C_Int_her">
+		<input type="submit" value="Integrantes de cada equipo">
 	</form>
 	
 </body>
