@@ -84,3 +84,11 @@ create table Involucrados(
 	id_agent int,
 	fecha varchar(80)
 );
+
+create table Users(
+	id_us varchar(10) not null,
+	nom_us varchar(80),
+	pass varchar(6),
+	roll varchar(80),
+	constraint pk_users primary key(id_us)
+);
