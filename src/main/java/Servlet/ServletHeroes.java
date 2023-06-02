@@ -17,7 +17,7 @@ import Datos.Conexion;
 import JavaBeans.JB_Heroes;
 import Datos.DAO_Heroes;
 
-@WebServlet(name = "ServletHeroes", urlPatterns = {"/ServletHeroes"})
+@WebServlet("/ServletHeroes")
 
 public class ServletHeroes extends HttpServlet{
 	
@@ -30,7 +30,7 @@ public class ServletHeroes extends HttpServlet{
 			DAO_Heroes herdao = new DAO_Heroes();
 			List<JB_Heroes> lista = herdao.seleccionar();
 			rq.setAttribute("lista",lista);
-			rq.getRequestDispatcher("-----Aqui va JSP-----").forward(rq, rp);
+			rq.getRequestDispatcher("/Editables/Editable_EquipoHer.jsp").forward(rq, rp);
 			
 		}
 		
@@ -58,7 +58,7 @@ public class ServletHeroes extends HttpServlet{
 					
 				}
 				rq.setAttribute("heroes", her);
-				rq.getRequestDispatcher("-----Aqui va JSP-----").forward(rq, rp);
+				rq.getRequestDispatcher("/Editables/Editable_EquipoHer.jsp").forward(rq, rp);
 				
 			}catch (SQLException ex) {
 				System.out.println("Error en SQL " + ex.getMessage());
