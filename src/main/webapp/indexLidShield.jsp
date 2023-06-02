@@ -11,10 +11,10 @@
 
 
 <body>
-<h2>Bienvenido a Admin</h2>
+<h2>Bienvenido Lider de Shield</h2>
 
 	<form action="ServletIntegrantes" method="get">
-		<input type="submit" value="Ir a C_Int_her">
+		<input type="submit" value="Integrantes de cada equipo">
 	</form>
 	
 </body>
