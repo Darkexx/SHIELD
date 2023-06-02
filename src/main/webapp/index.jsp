@@ -13,13 +13,22 @@
 <body>
 <h2>Bienvenido a SHIELD</h2>
 
-	<form action="indexLidShield.jsp" method="get">
-		<input type="submit" value="Index admin">
+	
+	<form action="Servlet_Login" method = "post">
+	
+	<label for="user"> Nombre de usuario </label>
+	<input id="user" type="text" name="EntUsu">
+	
+	<br>
+	<br>
+	
+	<label for="pass"> Contraseña </label>
+	<input id="pass" type="text" name="EntPass">
+	
+	<input type="submit" value="Ingresar">
+	
 	</form>
 	
-	<form action="indexLidHer.jsp" method="get">
-		<input type="submit" value="Index Lider">
-	</form>
 	
 </body>
 </html>
