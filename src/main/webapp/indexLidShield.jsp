@@ -13,7 +13,7 @@
 <body>
 <h2>Bienvenido Lider de Shield</h2>
 
-	<form action="//" method="get">
+	<form action="ServletHeroes" method="get">
 		<input type="submit" value="Equipos de Heroes">
 	</form>
 	
