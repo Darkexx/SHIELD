@@ -41,7 +41,7 @@ public class ServletIntegrantes extends HttpServlet{
 	        }
 			
 			rq.setAttribute("lista",lista);
-			rq.getRequestDispatcher("c_Int_her.jsp").forward(rq, rp);
+			rq.getRequestDispatcher("/Consultas/c_Int_her.jsp").forward(rq, rp);
 			
 		}
 		
@@ -67,7 +67,7 @@ public class ServletIntegrantes extends HttpServlet{
 					
 				}
 				rq.setAttribute("integrante", Inte);
-				rq.getRequestDispatcher("c_Int_her.jsp").forward(rq, rp);
+				rq.getRequestDispatcher("/Consultas/c_Int_her.jsp").forward(rq, rp);
 				
 			}catch (SQLException ex) {
 				System.out.println("Error en SQL " + ex.getMessage());
