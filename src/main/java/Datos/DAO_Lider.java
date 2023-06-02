@@ -1,6 +1,8 @@
 package Datos;
 
 import JavaBeans.JB_Lider;
+import JavaBeans.JB_Users;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +12,7 @@ public class DAO_Lider {
 	public static final String insertSQL = "INSERT INTO lider(id_l,nombre,equipo_arm) VALUES (?,?,?)";
 	public static final String updateSQL = "UPDATE lider SET nombre = ?, equipo_arm = ? WHERE id_l = ?";
 	public static final String deleteSQL = "DELETE FROM lider WHERE id_l= ?";
+	public static final String retnom = "SELECT nombre FROM lider where id_l = ?";
 	
 	public List<JB_Lider> seleccionar(){
 		Connection conn = null;
@@ -53,6 +56,43 @@ public class DAO_Lider {
 			return lideres;
 		
 	}
+	
+	
+	
+	public String retnom(int id_l) {
+		
+		Connection conn = null;
+		PreparedStatement state = null;
+		ResultSet result = null;
+		String nombre = null;
+		
+		try {
+			
+			conn = Conexion.getConnection();
+			state = conn.prepareStatement(retnom);
+			
+			state.setInt(1,id_l);
+			
+			result= state.executeQuery();
+			
+			if(result.next()) {
+				System.out.println("LiderDao=Encontrado");
+				nombre = result.getString("nombre");
+				
+			}
+			
+			Conexion.close(state);
+			Conexion.close(conn);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return nombre;
+		
+	}
+	
+	
 	
 	public int agregar(JB_Lider Lider) {
 		
