@@ -31,12 +31,12 @@ public class Servlet_Login extends HttpServlet{
                  //request.setAttribute("usuario",usuario);
 
                 if (usur.getRoll().equals("Lider_Shield")) {
-                    //Si el rol es de admin reedirige al jsp correspondiente
+                    //Si el rol es de Lider_Heroes reedirige al jsp correspondiente
                     RequestDispatcher dispatcher = request.getRequestDispatcher("indexLidShield.jsp");
                     dispatcher.forward(request, response);
                 }
                 else if (usur.getRoll().equals("Lider_Heroes")) {
-                    //Si se trata de un empleado obtenemos su nombre  para saludarlo en el jsp
+                    //Si se trata de un Lider_Heroes obtenemos su nombre 
                 	
                 	int idint = Integer.parseInt(usur.getId_us());
                 	
@@ -50,17 +50,17 @@ public class Servlet_Login extends HttpServlet{
                 }
                 else {
                 	
-                	System.out.println("no existe roll");
+                	System.out.println("no existe roll");//JSP mensaje de inexistencia de roll
                 } 
 
             }
             else {
-            	System.out.println("Contraseña incorrecta");
+            	System.out.println("Contraseña incorrecta");//JSP mensaje de error contraseña
             }
 
         }
         else {
-        	System.out.println("no existe usuario");
+        	System.out.println("no existe usuario");//JSP mensaje de error usuario
         }
 
 
