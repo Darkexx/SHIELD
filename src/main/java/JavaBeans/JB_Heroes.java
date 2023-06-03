@@ -23,6 +23,21 @@ public class JB_Heroes implements Serializable{
 			
 	}
 	
+public JB_Heroes(
+			String nombre,
+			int id_l,
+			String id_sub,
+			int id_h
+			
+			) {
+			
+		this.nombre=nombre;
+		this.id_l=id_l;
+		this.id_sub=id_sub;
+		this.id_h=id_h;
+			
+	}
+	
 	public JB_Heroes(
 			
 			int id_h,
