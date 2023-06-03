@@ -23,7 +23,7 @@
 	<br>
 	
 	<label for="pass"> Contraseña </label>
-	<input id="pass" type="text" name="EntPass">
+	<input id="pass" type="password" name="EntPass">
 	
 	<input type="submit" value="Ingresar">
 	
