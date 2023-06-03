@@ -6,6 +6,9 @@ public class JB_Heroes implements Serializable{
 	private String nombre;
 	private int id_l;
 	private String id_sub;
+	//--Variables para consultas--//
+	private String id_lider;//para obtener el nombre del lider
+	private String id_subdiv;//para obtener el nombre completo de la subdivision
 
 	public JB_Heroes() {
 		
@@ -53,6 +56,23 @@ public JB_Heroes(
 		this.id_sub=id_sub;
 			
 	}
+	//Constructor para consulta
+	public JB_Heroes(
+			
+			int id_h,
+			String nombre,
+			String id_lider,
+			String id_subdiv
+			
+			) {
+			
+		this.id_h=id_h;
+		this.nombre=nombre;
+		this.id_lider=id_lider;
+		this.id_subdiv=id_subdiv;
+			
+	}
+	
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -90,5 +110,24 @@ public JB_Heroes(
 
 	public void setIdSub(String idSub) {
 	    this.id_sub = idSub;
+	}
+	
+	////////////////////////////////////
+	
+	public String getid_lider() {
+	    return id_lider;
+	}
+
+	public void setid_lider(String id_lider) {
+	    this.id_lider = id_lider;
+	}
+	
+	
+	public String getid_subdiv() {
+	    return id_subdiv;
+	}
+
+	public void setid_subdiv(String id_subdiv) {
+	    this.id_subdiv = id_subdiv;
 	}
 }
