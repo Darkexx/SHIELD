@@ -76,11 +76,6 @@ public class ServletHeroes extends HttpServlet{
 	}
 	
 	protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws IOException {
-		
-		String op;
-		op=(String)rq.getSession().getAttribute("op");
-		
-		if(op.equals("nuevo")) {
 			
 			int id_h = Integer.parseInt(rq.getParameter("id_h"));
 			String nombre = rq.getParameter("nombre");
@@ -90,8 +85,7 @@ public class ServletHeroes extends HttpServlet{
 			JB_Heroes her = new JB_Heroes(id_h,nombre,id_l,id_sub);
 			DAO_Heroes herdao = new DAO_Heroes();
 			herdao.agregar(her);
-			rp.sendRedirect("/ServletHeroes");
-		}
+			rp.sendRedirect("");
 		
 	}
 
