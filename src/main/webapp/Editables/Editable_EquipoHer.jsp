@@ -55,7 +55,20 @@
     %>
     
     </table>
+    
+    <br>
+    <br>
+    
+    <form action="Editables/Agrega_EquipoHer.jsp" method="get">
+		<input type="submit" value="Agregar Equipo">
+	</form>
 	
+	<form action="ServletHeroesDelete" method="get">
+	
+		<input id="id" type="text" name="id_h">
+		<input type="submit" value="Eliminar Equipo">
+		
+	</form>
 	
 </body>
 </html>
