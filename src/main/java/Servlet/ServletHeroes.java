@@ -28,7 +28,7 @@ public class ServletHeroes extends HttpServlet{
 		if(opc.equals("list")) {
 			
 			DAO_Heroes herdao = new DAO_Heroes();
-			List<JB_Heroes> lista = herdao.seleccionar();
+			List<JB_Heroes> lista = herdao.consulher();
 			rq.setAttribute("lista",lista);
 			rq.getRequestDispatcher("/Editables/Editable_EquipoHer.jsp").forward(rq, rp);
 			
