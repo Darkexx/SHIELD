@@ -24,8 +24,8 @@
 		<tr>
 			<th>ID_Grupo</th>
 			<th>Nombre</th>
-			<th>ID_Lider</th>
-			<th>ID_Subdivision</th>
+			<th>Lider</th>
+			<th>Subdivision</th>
 		
 		</tr>
 	
@@ -42,8 +42,8 @@
 	<tr>
 		<td><%out.print(hero.getIdH());%></td>
 		<td><%out.print(hero.getNombre());%></td>
-		<td><%out.print(hero.getIdL());%></td>
-		<td><%out.print(hero.getIdSub());%></td>
+		<td><%out.print(hero.getid_lider());%></td>
+		<td><%out.print(hero.getid_subdiv());%></td>
 	</tr>
 
 	<%
