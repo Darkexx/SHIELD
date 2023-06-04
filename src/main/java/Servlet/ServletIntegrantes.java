@@ -34,14 +34,14 @@ public class ServletIntegrantes extends HttpServlet{
 			List<JB_Integrantes> lista = intedao.consu();
 			
 			if (lista.isEmpty()) {
-	          	System.out.println("Esta vacio, vez? ");
+	          	System.out.println("");
 	        }
 	        else {
 	        	System.out.println("Aqui hay datos ");
 	        }
 			
 			rq.setAttribute("lista",lista);
-			rq.getRequestDispatcher("/Consultas/c_Int_her.jsp").forward(rq, rp);
+			rq.getRequestDispatcher("/Editables/Editable_EquipoInteg.jsp").forward(rq, rp);
 			
 		}
 		
@@ -64,10 +64,11 @@ public class ServletIntegrantes extends HttpServlet{
 					
 					Inte.setIdH(rs.getInt("id_h"));
 					Inte.setNombre(rs.getString("nombre"));
+					Inte.setIdInt(rs.getInt("id_int"));
 					
 				}
 				rq.setAttribute("integrante", Inte);
-				rq.getRequestDispatcher("/Consultas/c_Int_her.jsp").forward(rq, rp);
+				rq.getRequestDispatcher("/Editables/Editable_EquipoInteg.jsp").forward(rq, rp);
 				
 			}catch (SQLException ex) {
 				System.out.println("Error en SQL " + ex.getMessage());
@@ -86,19 +87,16 @@ public class ServletIntegrantes extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws IOException {
 		
-		String op;
-		op=(String)rq.getSession().getAttribute("op");
 		
-		if(op.equals("nuevo")) {
 			
 			int id_h = Integer.parseInt(rq.getParameter(("id_h")));
 			String nombre = rq.getParameter("nombre");
+			int id_int = Integer.parseInt(rq.getParameter("id_int"));
 			
-			JB_Integrantes inte = new JB_Integrantes(id_h,nombre);
+			JB_Integrantes inte = new JB_Integrantes(id_h,nombre,id_int);
 			DAO_Integrantes intedao = new DAO_Integrantes();
 			intedao.agregar(inte);
-			rp.sendRedirect("/ServletIntegrantes");
-		}
+			rp.sendRedirect("");
 		
 	}
 
