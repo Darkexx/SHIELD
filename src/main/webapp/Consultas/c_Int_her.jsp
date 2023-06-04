@@ -20,6 +20,7 @@
 		<tr>
 			<th>Grupo</th>
 			<th>Nombre integrante</th>
+			<th>Identificacion</th>
 		
 		</tr>
 	
@@ -36,6 +37,7 @@
 	<tr>
 		<td><%out.print(integ.getNombre());%></td>
 		<td><%out.print(integ.getNombre2());%></td>
+		<td><%out.print(integ.getIdInt());%></td>
 	</tr>
 
 	<%
