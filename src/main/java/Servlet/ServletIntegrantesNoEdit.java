@@ -94,8 +94,9 @@ public class ServletIntegrantesNoEdit extends HttpServlet{
 			
 			int id_h = Integer.parseInt(rq.getParameter(("id_h")));
 			String nombre = rq.getParameter("nombre");
+			int id_int = Integer.parseInt(rq.getParameter(("id_int")));
 			
-			JB_Integrantes inte = new JB_Integrantes(id_h,nombre);
+			JB_Integrantes inte = new JB_Integrantes(id_h,nombre,id_int);
 			DAO_Integrantes intedao = new DAO_Integrantes();
 			intedao.agregar(inte);
 			rp.sendRedirect("/ServletIntegrantes");
