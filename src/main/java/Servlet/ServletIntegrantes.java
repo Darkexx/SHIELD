@@ -81,7 +81,7 @@ public class ServletIntegrantes extends HttpServlet{
 			JB_Integrantes inte = new JB_Integrantes(id_h);
 			DAO_Integrantes intedao = new DAO_Integrantes();
 			intedao.borrar(inte);
-			rp.sendRedirect("ServletIntegrantes");
+			rp.sendRedirect("");
 		}	
 	}
 	
