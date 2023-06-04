@@ -17,7 +17,7 @@
 <h2>Bienvenido Lider de Heroes</h2>
 <p> Usuario = <% out.print(request.getAttribute("nomlider")); %> </p>
 
-	<form action="ServletIntegrantes" method="get">
+	<form action="ServletIntegrantesNoEdit" method="get">
 		<input type="submit" value="Integrantes de cada equipo">
 	</form>
 	
