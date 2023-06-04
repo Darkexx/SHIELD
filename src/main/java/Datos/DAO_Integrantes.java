@@ -10,7 +10,7 @@ import java.util.List;
 public class DAO_Integrantes {
 	public static final String selectSQL = "SELECT * FROM integrantes";
 	public static final String insertSQL = "INSERT INTO integrantes(id_h,nombre,id_int) VALUES (?,?,?)";
-	public static final String updateSQL = "UPDATE integrantes SET nombre = ? WHERE id_int = ?";
+	public static final String updateSQL = "UPDATE integrantes SET id_h = ? , nombre = ? WHERE id_int = ?";
 	public static final String deleteSQL = "DELETE FROM integrantes WHERE id_int = ? ";
 	public static final String ConsulHerAgSQL = "select heroes.nombre as Agencia , integrantes.nombre ,integrantes.id_int from integrantes join heroes on integrantes.id_h=heroes.id_h";
 	
@@ -180,8 +180,9 @@ public class DAO_Integrantes {
 			conn = Conexion.getConnection();
 			state = conn.prepareStatement(updateSQL);
 			
-			state.setString(1,Integrante.getNombre());
-			state.setInt(2,Integrante.getIdH());
+			state.setInt(1,Integrante.getIdH());
+			state.setString(2,Integrante.getNombre());
+			state.setInt(3, Integrante.getIdInt());
 			
 			registros = state.executeUpdate();
 			if(registros>0) {
@@ -190,7 +191,6 @@ public class DAO_Integrantes {
 			
 			Conexion.close(state);
 			Conexion.close(conn);
-			JB_Integrantes IntModi = new JB_Integrantes();
 			
 			
 		}catch(SQLException e){
