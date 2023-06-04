@@ -12,9 +12,15 @@ public class JB_Integrantes implements Serializable{
 		
 	}
 	
-	public JB_Integrantes( int id_h) {
+	//public JB_Integrantes(int id_h) {
 			
-		this.id_h=id_h;
+		//this.id_h=id_h;
+			
+	//}
+	
+	public JB_Integrantes(int id_int) {
+		
+		this.id_int=id_int;
 			
 	}
 	
