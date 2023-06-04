@@ -9,10 +9,10 @@ import java.util.List;
 
 public class DAO_Integrantes {
 	public static final String selectSQL = "SELECT * FROM integrantes";
-	public static final String insertSQL = "INSERT INTO integrantes(id_h,nombre) VALUES (?,?)";
-	public static final String updateSQL = "UPDATE integrantes SET nombre = ? WHERE id_h = ?";
-	public static final String deleteSQL = "DELETE FROM integrantes WHERE id_h = ?";
-	public static final String ConsulHerAgSQL = "select heroes.nombre as Agencia , integrantes.nombre from integrantes join heroes on integrantes.id_h=heroes.id_h";
+	public static final String insertSQL = "INSERT INTO integrantes(id_h,nombre,id_int) VALUES (?,?,?)";
+	public static final String updateSQL = "UPDATE integrantes SET nombre = ? WHERE id_int = ?";
+	public static final String deleteSQL = "DELETE FROM integrantes WHERE id_int = ?";
+	public static final String ConsulHerAgSQL = "select heroes.nombre as Agencia , integrantes.nombre ,integrantes.id_int from integrantes join heroes on integrantes.id_h=heroes.id_h";
 	
 	public List<JB_Integrantes> seleccionar(){
 		Connection conn = null;
@@ -32,8 +32,9 @@ public class DAO_Integrantes {
 						
 						int id_h = result.getInt("id_h");
 						String nombre = result.getString("nombre");
+						int id_int = result.getInt("id_int");
 						
-						In = new JB_Integrantes(id_h,nombre);
+						In = new JB_Integrantes(id_h,nombre,id_int);
 						integrantes.add(In);
 						
 					}
@@ -45,6 +46,7 @@ public class DAO_Integrantes {
 					for(JB_Integrantes c: integrantes) {
 						System.out.println("id_h: " + c.getIdH());
 						System.out.println("Nombre: " + c.getNombre());
+						System.out.println("Id_int: "+c.getIdInt());
 					}
 				
 			}catch(Exception e) {
@@ -75,8 +77,9 @@ public class DAO_Integrantes {
 						//int id_h = result.getInt("id_h");
 						String nombre = result.getString("Agencia");
 						String nombre2 = result.getString("nombre");
+						int id_int = result.getInt("id_int");
 						
-						In = new JB_Integrantes(nombre,nombre2);
+						In = new JB_Integrantes(nombre,nombre2,id_int);
 						integrantes.add(In);
 						
 					}
@@ -118,6 +121,7 @@ public class DAO_Integrantes {
 			
 			state.setInt(1, Integrante.getIdH());
 			state.setString(2,Integrante.getNombre());
+			state.setInt(3,Integrante.getIdInt());
 			
 			registros = state.executeUpdate();
 			if(registros>0) {
