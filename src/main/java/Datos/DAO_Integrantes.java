@@ -11,7 +11,7 @@ public class DAO_Integrantes {
 	public static final String selectSQL = "SELECT * FROM integrantes";
 	public static final String insertSQL = "INSERT INTO integrantes(id_h,nombre,id_int) VALUES (?,?,?)";
 	public static final String updateSQL = "UPDATE integrantes SET nombre = ? WHERE id_int = ?";
-	public static final String deleteSQL = "DELETE FROM integrantes WHERE id_int = ?";
+	public static final String deleteSQL = "DELETE FROM integrantes WHERE id_int = ? ";
 	public static final String ConsulHerAgSQL = "select heroes.nombre as Agencia , integrantes.nombre ,integrantes.id_int from integrantes join heroes on integrantes.id_h=heroes.id_h";
 	
 	public List<JB_Integrantes> seleccionar(){
@@ -149,7 +149,7 @@ public class DAO_Integrantes {
 			conn = Conexion.getConnection();
 			state = conn.prepareStatement(deleteSQL);
 			
-			state.setInt(1,Integrante.getIdH());
+			state.setInt(1, Integrante.getIdInt());
 			registros = state.executeUpdate();
 			
 			if(registros>0) {
@@ -158,11 +158,13 @@ public class DAO_Integrantes {
 			
 			Conexion.close(state);
 			Conexion.close(conn);
-			JB_Integrantes IntDLT = new JB_Integrantes();
 					
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		
+		System.out.println(registros);
+		
 		return registros;
 		
 	}
