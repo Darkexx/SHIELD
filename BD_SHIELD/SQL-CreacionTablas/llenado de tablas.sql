@@ -29,14 +29,14 @@ insert into heroes(id_h,nombre,id_l,id_sub) values
 	(21,'Avengers',102,'SHIELD'),
 	(22,'Guardians of the galaxy',103,'N');
 	
-insert into integrantes(nombre,id_h) values
-	('Tony Stark',21),
-	('Bruce Banner',21),
-	('Natasha Romanoff',21),
-	('Scott Summers',20),
-	('Peter Quill',22),
-	('Gamora Zen',22),
-	('Rocket Racoon',22);
+insert into integrantes(nombre,id_h,id_int) values
+	('Tony Stark',21,40),
+	('Bruce Banner',21,41),
+	('Natasha Romanoff',21,42),
+	('Scott Summers',20,43),
+	('Peter Quill',22,44),
+	('Gamora Zen',22,45),
+	('Rocket Racoon',22,46);
 
 insert into reuniones(id_l,tema,hora) values
 	(101,'Sismtema educativo mutante','07:00'),
