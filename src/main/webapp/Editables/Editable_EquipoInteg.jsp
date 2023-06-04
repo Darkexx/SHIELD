@@ -57,7 +57,7 @@
 		<input type="submit" value="Agregar Integrante">
 	</form>
 	
-	<form action="" method="get">
+	<form action="Editables/Actualizar_EquipoInteg.jsp" method="get">
 	
 		<input type="submit" value="Actualizar datos">
 		
