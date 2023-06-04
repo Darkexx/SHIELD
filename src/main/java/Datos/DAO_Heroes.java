@@ -164,6 +164,9 @@ public class DAO_Heroes {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		
+		System.out.println(registros);
+		
 		return registros;
 		
 	}
