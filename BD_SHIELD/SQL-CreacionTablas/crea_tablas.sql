@@ -40,7 +40,9 @@ create table Heroes(
 
 create table Integrantes(
 	id_h int,
-	nombre varchar(80)
+	nombre varchar(80),
+	id_int int,
+	constraint pk_Integrantes primary key(id_int)
 );
 
 create table Lider(
