@@ -6,7 +6,12 @@ public class JB_Involucrados implements Serializable{
 	private int id_h;
 	private int id_agent;
 	private String fecha;
-
+	/////////Variables para consulta/////////// 
+	private String ataque;
+	private String heroe;
+	private String agente;
+	
+	
 	public JB_Involucrados() {
 		
 	}
@@ -28,6 +33,24 @@ public class JB_Involucrados implements Serializable{
 	}
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public JB_Involucrados(
+			
+			String ataque,
+			String heroe,
+			String agente,
+			String fecha
+			
+			) {
+			
+		this.ataque=ataque;
+		this.heroe=heroe;
+		this.agente=agente;
+		this.fecha=fecha;
+			
+	}
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	// Getter y Setter ID_At
 	public String getIdAt() {
@@ -64,5 +87,31 @@ public class JB_Involucrados implements Serializable{
 	public void setFecha(String fecha) {
 	    this.fecha = fecha;
 	}
+	
+	///////////////////////////////////////////////////////
+	
+	public String getAtaque() {
+		return ataque;
+	}
+	
+	public void setAtaque(String ataque) {
+		this.ataque = ataque;
+	}
 
+	public String getHeroe() {
+		return heroe;
+	}
+
+	public void setHeroe(String heroe) {
+		this.heroe = heroe;
+	}
+
+	public String getAgente() {
+		return agente;
+	}
+
+	public void setAgente(String agente) {
+		this.agente = agente;
+	}
+	
 }
