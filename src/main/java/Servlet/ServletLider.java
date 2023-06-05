@@ -75,9 +75,15 @@ public class ServletLider extends HttpServlet{
 		
 		
 			
-			//int id_h = Integer.parseInt(rq.getParameter(("id_h")));
-			//String nombre = rq.getParameter("nombre");
-			//int id_int = Integer.parseInt(rq.getParameter("id_int"));
+			int id_l = Integer.parseInt(rq.getParameter(("id_l")));
+			String nombre = rq.getParameter("nombre");
+			String arma = rq.getParameter("equipo_arm");
+			
+			JB_Lider lid = new JB_Lider(id_l,nombre,arma);
+			DAO_Lider lidao = new DAO_Lider();
+			
+			lidao.agregar(lid);
+			rp.sendRedirect("");
 			
 			//JB_Integrantes inte = new JB_Integrantes(id_h,nombre,id_int);
 			//DAO_Integrantes intedao = new DAO_Integrantes();
