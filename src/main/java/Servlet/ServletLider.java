@@ -84,11 +84,6 @@ public class ServletLider extends HttpServlet{
 			
 			lidao.agregar(lid);
 			rp.sendRedirect("");
-			
-			//JB_Integrantes inte = new JB_Integrantes(id_h,nombre,id_int);
-			//DAO_Integrantes intedao = new DAO_Integrantes();
-			//intedao.agregar(inte);
-			//rp.sendRedirect("");
 		
 	}
 
