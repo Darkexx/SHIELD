@@ -57,11 +57,11 @@
     <br>
     <br>
     
-    <form action="Editables/Agrega_EquipoHer.jsp" method="get">
-		<input type="submit" value="Agregar Equipo">
+    <form action="Editables/Agrega_Lider.jsp" method="get">
+		<input type="submit" value="Agregar Lider">
 	</form>
 	
-	<form action="Editables/Actualizar_EquipoHer.jsp" method="get">
+	<form action="Editables/Actualizar_Lider.jsp" method="get">
 	
 		<input type="submit" value="Actualizar datos">
 		
@@ -69,10 +69,10 @@
 	
 	<br>
 	
-	<form action="ServletHeroesDelete" method="get">
+	<form action="ServletLiderDelete" method="get">
 	
-		<input id="id" type="text" name="id_h">
-		<input type="submit" value="Eliminar Equipo">
+		<input id="id" type="text" name="id_l">
+		<input type="submit" value="Eliminar Lider">
 		
 	</form>
 </body>
