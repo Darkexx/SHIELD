@@ -10,6 +10,7 @@ public class DAO_Involucrados {
 	public static final String insertSQL = "INSERT INTO agentes(id_agent,nombre,especializacion,puesto) VALUES (?,?,?,?)";
 	public static final String updateSQL = "UPDATE agentes SET nombre = ?, especializacion = ?, puesto = ? WHERE id_agent = ?";
 	public static final String deleteSQL = "DELETE FROM agentes WHERE id_agent=?";
+	public static final String consulInv = "select ataque.nombre as Ataque ,heroes.nombre as Heroes ,agentes.nombre as Agente ,involucrados.fecha from involucrados join ataque on involucrados.id_at=ataque.id_at join heroes on involucrados.id_h=heroes.id_h join agentes on involucrados.id_agent=agentes.id_agent";
 	
 	public List<JB_Involucrados> seleccionar(){
 		Connection conn = null;
@@ -56,6 +57,59 @@ public class DAO_Involucrados {
 		
 	}
 	
+	/////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public List<JB_Involucrados> consult(){
+		Connection conn = null;
+		Statement state = null;
+		ResultSet result = null;
+		JB_Involucrados Inv = null;
+		
+			List<JB_Involucrados> involucrados = new ArrayList<>();
+			
+			try {
+				
+				conn = Conexion.getConnection();
+				state = conn.createStatement();
+				result = state.executeQuery(consulInv);
+				
+					while(result.next()) {
+						
+						String ataque = result.getString("Ataque");
+						String heroes = result.getString("Heroes");
+						String agente = result.getString("Agente");
+						String fecha = result.getString("fecha");
+						
+						//String id_at = result.getString("id_at");
+						//int id_h = result.getInt("id_h");
+						//int id_agent = result.getInt("id_agent");
+						//String fecha = result.getString("fecha");
+						
+						Inv = new JB_Involucrados(ataque,heroes,agente,fecha);
+						involucrados.add(Inv);
+						
+					}
+					
+					Conexion.close(result);
+					Conexion.close(state);
+					Conexion.close(conn);
+					
+					for(JB_Involucrados c: involucrados) {
+						System.out.println("id_at: " + c.getAtaque());
+						System.out.println("id_h: " + c.getHeroe());
+						System.out.println("id_agent: " + c.getAgente());
+						System.out.println("fecha: " + c.getFecha());
+					}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			return involucrados;
+		
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////
 	public int agregar(JB_Involucrados Involucrado) {
 		
 		Connection conn = null;
