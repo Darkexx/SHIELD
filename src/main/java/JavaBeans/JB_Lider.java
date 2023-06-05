@@ -10,6 +10,14 @@ public class JB_Lider implements Serializable{
 		
 	}
 	
+	
+	public JB_Lider(int id_l) {
+		
+		this.id_l=id_l;
+	
+	}
+	
+	
 	public JB_Lider(
 			
 			int id_l,
@@ -21,6 +29,21 @@ public class JB_Lider implements Serializable{
 		this.id_l=id_l;
 		this.nombre=nombre;
 		this.equipo_arm=equipor_arm;
+			
+	}
+	
+	//////////////////////////////////////Constructor para actualizar registros////////////////////////////////////////////////////////////////////////////////////
+	
+	public JB_Lider(
+			
+			String nombre,
+			String equipor_arm,
+			int id_l
+			
+			) {
+		this.nombre=nombre;
+		this.equipo_arm=equipor_arm;
+		this.id_l=id_l;
 			
 	}
 	
