@@ -25,7 +25,7 @@
 		<input type="submit" value="Lider equipos de Heroes">
 	</form>
 	
-	<form action="//" method="get">
+	<form action="ServletInvolucrados" method="get">
 		<input type="submit" value="Ataques e involucrados">
 	</form>
 	
