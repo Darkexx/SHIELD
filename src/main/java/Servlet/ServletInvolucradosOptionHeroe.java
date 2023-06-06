@@ -7,7 +7,9 @@ import javax.servlet.*;
 import java.util.*;
 
 import JavaBeans.JB_Heroes;
+import JavaBeans.JB_Agentes;
 import Datos.DAO_Heroes;
+import Datos.DAO_Agentes;
 
 @WebServlet("/ServletInvolucradosOptionHeroe")
 
@@ -19,6 +21,7 @@ public class ServletInvolucradosOptionHeroe extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest rq, HttpServletResponse rp) throws IOException, ServletException{
 			
+			//Para heroes
 			DAO_Heroes herdao = new DAO_Heroes();
 			List<JB_Heroes> lista = herdao.seleccionar();
 			
@@ -26,11 +29,25 @@ public class ServletInvolucradosOptionHeroe extends HttpServlet{
 	          	System.out.println("void como el void");
 	        }
 	        else {
-	        	System.out.println("Aqui hay datos we");
-	        	System.out.println(lista);
+	        	System.out.println("Aqui hay datos de heroes we");
 	        }
 			
 			rq.setAttribute("heroes",lista);
+			
+			//Para agentes
+			DAO_Agentes agedao = new DAO_Agentes();
+			List<JB_Agentes> lista2 = agedao.seleccionar();
+			
+			if (lista2.isEmpty()) {
+	          	System.out.println("void como el void");
+	        }
+	        else {
+	        	System.out.println("Aqui hay datos de agentes we");
+	        }
+			rq.setAttribute("agentes", lista2);
+			
+			
+			//Dirige a Involucrados
 			rq.getRequestDispatcher("/Editables/Agrega_Involucrados.jsp").forward(rq, rp);
 	}
 
