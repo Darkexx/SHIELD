@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="JavaBeans.JB_Heroes" %>
+<%@ page import="JavaBeans.JB_Agentes" %>
+
 <html>
 
 	<head>
@@ -45,8 +47,27 @@
 		<br>
 		<br>
 		
-		<label for="equipo_arm"> Agente </label>
-		<input id="equipo_arm" type="text" name="id_agent">
+		
+		<%
+			@SuppressWarnings("unchecked")
+			List<JB_Agentes> Agentes = (List<JB_Agentes>) request.getAttribute("agentes");
+		
+		%>
+		
+		<label for="ag">Agentes</label>
+		<select id="ag" name="id_agent">
+		
+			<% for(JB_Agentes agente : Agentes){ %>	
+		
+				<option value = "<%= agente.getIdAgent() %>"> 
+				
+					<%= agente.getNombre()%> 
+				
+				</option>
+			
+			<%}%>
+			
+		</select>
 		
 		<br>
 		<br>
