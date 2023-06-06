@@ -133,7 +133,8 @@ public class DAO_Ataques {
 			state.setString(1,Ataque.getNombre());
 			state.setInt(2,Ataque.getMuertes());
 			state.setInt(3,Ataque.getHeridos());
-			state.setString(4,Ataque.getIdAt());
+			state.setString(4, Ataque.getPais());
+			state.setString(5,Ataque.getIdAt());
 			
 			registros = state.executeUpdate();
 			if(registros>0) {
