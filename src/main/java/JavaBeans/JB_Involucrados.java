@@ -32,6 +32,24 @@ public class JB_Involucrados implements Serializable{
 			
 	}
 	
+	
+	public JB_Involucrados(
+			
+			int id_h,
+			int id_agent,
+			String fecha,
+			String id_at
+			
+			) {
+
+		this.id_h=id_h;
+		this.id_agent=id_agent;
+		this.fecha=fecha;
+		this.id_at=id_at;
+			
+	}
+	
+	
 	public JB_Involucrados(String id_at) {
 			
 		this.id_at=id_at;
