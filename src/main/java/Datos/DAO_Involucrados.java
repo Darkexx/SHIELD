@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DAO_Involucrados {
-	public static final String selectSQL = "SELECT * FROM agentes";
-	public static final String insertSQL = "INSERT INTO agentes(id_agent,nombre,especializacion,puesto) VALUES (?,?,?,?)";
-	public static final String updateSQL = "UPDATE agentes SET nombre = ?, especializacion = ?, puesto = ? WHERE id_agent = ?";
-	public static final String deleteSQL = "DELETE FROM agentes WHERE id_agent=?";
+	public static final String selectSQL = "SELECT * FROM involucrados";
+	public static final String insertSQL = "INSERT INTO involucrados(id_at,id_h,id_agent,fecha) VALUES (?,?,?,?)";
+	public static final String updateSQL = "UPDATE involucrados SET id_h = ?, id_agent = ?, fecha = ? WHERE id_at = ?";
+	public static final String deleteSQL = "DELETE FROM involucrados WHERE id_at=?";
 	public static final String consulInv = "select ataque.nombre as Ataque ,heroes.nombre as Heroes ,agentes.nombre as Agente ,involucrados.fecha from involucrados join ataque on involucrados.id_at=ataque.id_at join heroes on involucrados.id_h=heroes.id_h join agentes on involucrados.id_agent=agentes.id_agent";
 	
 	public List<JB_Involucrados> seleccionar(){
