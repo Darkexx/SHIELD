@@ -65,7 +65,7 @@
 		<input type="submit" value="Agregar Ataque">
 	</form>
 	
-	<form action="" method="get">
+	<form action="ServletAtaqueOptionUpdate" method="get">
 	
 		<input type="submit" value="Actualizar datos">
 		
