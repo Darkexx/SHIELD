@@ -35,22 +35,6 @@ public class ServletInvolucradosOptionUpdate extends HttpServlet{
 			
 			rq.setAttribute("involucrados", involucrados);
 			
-			//Para heroes
-			//DAO_Heroes herdao = new DAO_Heroes();
-			//List<JB_Heroes> lista = herdao.seleccionar();
-			
-			//if (lista.isEmpty()) {
-	        //	System.out.println("void como el void");
-	        //}
-	        //else {
-	        	//System.out.println("Aqui hay datos de heroes we");
-	        //}
-			
-			//rq.setAttribute("heroes",lista);
-			
-			
-			
-			
 			//Dirige a Involucrados
 			rq.getRequestDispatcher("/Editables/Actualizar_Involucrados.jsp").forward(rq, rp);
 			}
