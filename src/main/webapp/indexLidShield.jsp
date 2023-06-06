@@ -29,7 +29,7 @@
 		<input type="submit" value="Ataques e involucrados">
 	</form>
 	
-	<form action="//" method="get">
+	<form action="ServletAtaque" method="get">
 		<input type="submit" value="Info. Ataque">
 	</form>
 	
@@ -46,7 +46,7 @@
 	</form>
 	
 	<form action="//" method="get">
-		<input type="submit" value="Subdivision y lideres>
+		<input type="submit" value="Subdivision y lideres">
 	</form>
 	
 </body>
