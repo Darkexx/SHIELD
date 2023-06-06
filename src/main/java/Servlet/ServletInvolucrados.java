@@ -80,10 +80,19 @@ public class ServletInvolucrados extends HttpServlet{
 	protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws IOException {
 		
 		
+			String id_at = rq.getParameter("id_at");
+			int id_h = Integer.parseInt(rq.getParameter("id_h"));
+			int id_agent = Integer.parseInt(rq.getParameter("id_agent"));
+			String fecha = rq.getParameter("fecha");
 			
-			int id_l = Integer.parseInt(rq.getParameter(("id_l")));
-			String nombre = rq.getParameter("nombre");
-			String arma = rq.getParameter("equipo_arm");
+			//int id_l = Integer.parseInt(rq.getParameter(("id_l")));
+			//String nombre = rq.getParameter("nombre");
+			//String arma = rq.getParameter("equipo_arm");
+			
+			JB_Involucrados inv = new JB_Involucrados(id_at,id_h,id_agent,fecha);
+			DAO_Involucrados invdao = new DAO_Involucrados();
+			
+			invdao.agregar(inv);
 			
 			//JB_Lider lid = new JB_Lider(id_l,nombre,arma);
 			//DAO_Lider lidao = new DAO_Lider();
