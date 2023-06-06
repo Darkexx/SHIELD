@@ -73,9 +73,9 @@
 	
 	<br>
 	
-	<form action="" method="get">
+	<form action="ServletAtaqueDelete" method="get">
 	
-		<input id="id" type="text" name="id_h">
+		<input id="id" type="text" name="id_at">
 		<input type="submit" value="Eliminar Ataque">
 		
 	</form>
