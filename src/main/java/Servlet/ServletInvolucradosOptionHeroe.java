@@ -21,6 +21,8 @@ public class ServletInvolucradosOptionHeroe extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest rq, HttpServletResponse rp) throws IOException, ServletException{
 			
+			
+		
 			//Para heroes
 			DAO_Heroes herdao = new DAO_Heroes();
 			List<JB_Heroes> lista = herdao.seleccionar();
@@ -49,6 +51,6 @@ public class ServletInvolucradosOptionHeroe extends HttpServlet{
 			
 			//Dirige a Involucrados
 			rq.getRequestDispatcher("/Editables/Agrega_Involucrados.jsp").forward(rq, rp);
-	}
+			}
 
 }
