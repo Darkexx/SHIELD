@@ -14,6 +14,8 @@
 <h2>Inserte los datos para agregar un nuevo evento</h2>
 
 
+<!-- 	Aqui no se redirije como ../ServletInvolucrados ya que no viene de otro jsp -->
+
 	<form action="ServletInvolucrados" method="post">
 
 		<label for="id"> Ataque </label>
