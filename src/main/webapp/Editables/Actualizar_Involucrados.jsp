@@ -22,7 +22,7 @@
 	<br>
 	<br>
 	
-	<form action="../ServletInvolucradosUpdate" method="get">
+	<form action="ServletInvolucradosUpdate" method="get">
 
 <!-- 		<label for="id"> ID del grupo </label> -->
 <!-- 		<input id="id_her" type="text" name="id_h"> -->
