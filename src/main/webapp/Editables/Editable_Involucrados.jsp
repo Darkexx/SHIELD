@@ -63,7 +63,7 @@
 		<input type="submit" value="Agregar Ataque">
 	</form>
 	
-	<form action="" method="get">
+	<form action="ServletInvolucradosOptionHeroe" method="get">
 	
 		<input type="submit" value="Actualizar datos">
 		
