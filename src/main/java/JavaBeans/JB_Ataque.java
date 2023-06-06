@@ -41,6 +41,24 @@ public JB_Ataque(
 			
 	}
 	
+	public JB_Ataque(
+			
+			String nombre,
+			int muertes,
+			int heridos,
+			String pais,
+			String id_at
+			
+			) {
+			
+		this.nombre=nombre;
+		this.muertes=muertes;
+		this.heridos=heridos;
+		this.pais=pais;
+		this.id_at=id_at;	
+		
+	}
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	// Getter y Setter ID_At
