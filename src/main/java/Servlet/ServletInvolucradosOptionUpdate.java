@@ -21,35 +21,38 @@ public class ServletInvolucradosOptionUpdate extends HttpServlet{
 	protected void doGet(HttpServletRequest rq, HttpServletResponse rp) throws IOException, ServletException{
 			
 			
+			//Para involucrados
 		
+			DAO_Involucrados invodao = new DAO_Involucrados();
+			List<JB_Involucrados> involucrados = invodao.seleccionar();
+			if (involucrados.isEmpty()) {
+	        	System.out.println("void como el void");
+	        }
+	        else {
+	        	System.out.println("Aqui hay datos de involucrados we");
+	        }
+			
+			
+			rq.setAttribute("involucrados", involucrados);
+			
 			//Para heroes
-			DAO_Heroes herdao = new DAO_Heroes();
-			List<JB_Heroes> lista = herdao.seleccionar();
+			//DAO_Heroes herdao = new DAO_Heroes();
+			//List<JB_Heroes> lista = herdao.seleccionar();
 			
-			if (lista.isEmpty()) {
-	          	System.out.println("void como el void");
-	        }
-	        else {
-	        	System.out.println("Aqui hay datos de heroes we");
-	        }
+			//if (lista.isEmpty()) {
+	        //	System.out.println("void como el void");
+	        //}
+	        //else {
+	        	//System.out.println("Aqui hay datos de heroes we");
+	        //}
 			
-			rq.setAttribute("heroes",lista);
+			//rq.setAttribute("heroes",lista);
 			
-			//Para agentes
-			DAO_Agentes agedao = new DAO_Agentes();
-			List<JB_Agentes> lista2 = agedao.seleccionar();
 			
-			if (lista2.isEmpty()) {
-	          	System.out.println("void como el void");
-	        }
-	        else {
-	        	System.out.println("Aqui hay datos de agentes we");
-	        }
-			rq.setAttribute("agentes", lista2);
 			
 			
 			//Dirige a Involucrados
-			rq.getRequestDispatcher("/Editables/Agrega_Involucrados.jsp").forward(rq, rp);
+			rq.getRequestDispatcher("/Editables/Actualizar_Involucrados.jsp").forward(rq, rp);
 			}
 
 }
