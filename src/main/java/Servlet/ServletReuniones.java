@@ -35,10 +35,18 @@ public class ServletReuniones extends HttpServlet {
     protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws IOException {
         
 
-    	   	int id_agent = Integer.parseInt(rq.getParameter("id_agent"));
-    	   	String nombre = rq.getParameter("nombre");
-    	   	String especializacion = rq.getParameter("especializacion");
-    	   	String puesto = rq.getParameter("puesto");
+    	   	//int id_agent = Integer.parseInt(rq.getParameter("id_agent"));
+    	   	//String nombre = rq.getParameter("nombre");
+    	   	//String especializacion = rq.getParameter("especializacion");
+    	   	//String puesto = rq.getParameter("puesto");
+    	
+    		int id_l = Integer.parseInt(rq.getParameter("id_l"));
+    		String tema = rq.getParameter("tema");
+    		String hora = rq.getParameter("hora");
+    		
+    		JB_reuniones reun = new JB_reuniones(id_l,tema,hora);
+    		DAO_Reuniones reundao = new DAO_Reuniones();
+    		reundao.agregar(reun);
 
             //JB_Agentes agent = new JB_Agentes(id_agent, nombre, especializacion, puesto);
             //DAO_Agentes agentdao = new DAO_Agentes();
