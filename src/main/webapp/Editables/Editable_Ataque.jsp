@@ -79,5 +79,26 @@
 		<input type="submit" value="Eliminar Ataque">
 		
 	</form>
+	
+	<form action="ServletTipAtaque" method="get">
+	
+		<label>Mas informacion de ataques :</label>
+		<br>
+		
+		<label>Selecciona el tipo de ataque que desees</label>
+		
+		<select name = "t_ataque">
+			
+			<option value="Invasion territorial">Invasion territorial</option>
+			<option value="Amenaza extraterrestre">Amenaza extraterrestre</option>
+			<option value="Economicos">Economicos</option>
+			<option value="Mutantes">Mutantes</option>
+		
+		</select>
+		
+		<input type="submit" value="OK">
+		
+	</form>
+	
 </body>
 </html>
