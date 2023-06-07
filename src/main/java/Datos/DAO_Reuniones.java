@@ -28,11 +28,11 @@ public class DAO_Reuniones {
 				
 					while(result.next()) {
 						
-						int id_ls = result.getInt("id_ls");
+						int id_l = result.getInt("id_l");
 						String tema = result.getString("tema");
 						String hora = result.getString("hora");
 						
-						Re = new JB_reuniones(id_ls,tema,hora);
+						Re = new JB_reuniones(id_l,tema,hora);
 						reuniones.add(Re);
 						
 					}
