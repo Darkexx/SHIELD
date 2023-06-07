@@ -4,7 +4,9 @@ insert into ataque(id_at,nombre,muertes,heridos,pais) values
 	
 insert into tip_ataque(id_at,nom_tipo,reg_afect,mutant_afect,grupo_at,alien,bienes) values
 	('hydra21','Invasion territorial','Gran parte de alemania','','hydra','',''),
-	('siminv19','Amenaza extraterrestre','Estados unidos','','','Simbiontes','');
+	('siminv19','Amenaza extraterrestre','Estados unidos','','','Simbiontes',''),
+	('RobBol22','Economicos','','','','','Dinero del Banco Nacional de Mexico'),
+	('ZombMut','Mutantes','','Estudiantes de la escuela Xavier','Aun sin conocer','','');
 
 insert into stark(id_ceo,nombre) values
 	('RichG','Richard Guerrero'),
