@@ -33,7 +33,7 @@
 		<input type="submit" value="Info. Ataque">
 	</form>
 	
-	<form action="//" method="get">
+	<form action="ServletAgentes" method="get">
 		<input type="submit" value="Agentes de SHIELD">
 	</form>
 	
