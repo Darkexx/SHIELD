@@ -37,7 +37,7 @@
 		<input type="submit" value="Agentes de SHIELD">
 	</form>
 	
-	<form action="//" method="get">
+	<form action="ServletReuniones" method="get">
 		<input type="submit" value="Juntas pendientes">
 	</form>
 	
