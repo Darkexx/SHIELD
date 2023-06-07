@@ -53,13 +53,13 @@
 	<br>
     <br>
     
-    <form action="" method="get">
-		<input type="submit" value="Agregar Integrante">
+    <form action="ServletReunionesOptionRe" method="get">
+		<input type="submit" value="Agrega reunion">
 	</form>
 	
 	<form action="" method="get">
 	
-		<input type="submit" value="Actualizar datos">
+		<input type="submit" value="Actualizar reunion">
 		
 	</form>
 	
@@ -68,7 +68,7 @@
 	<form action="" method="get">
 	
 		<input id="id_int" type="text" name="id_i">
-		<input type="submit" value="Eliminar Integrante">
+		<input type="submit" value="Eliminar reunion">
 		
 	</form>
 
