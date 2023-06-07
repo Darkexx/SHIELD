@@ -16,9 +16,11 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.*;
 
-@WebServlet(name = "ServletAgentes", urlPatterns = {"/ServletAgentes"})
+@WebServlet("/ServletAgentes")
 public class ServletAgentes extends HttpServlet {
-    //PETICION GET
+    
+	private static final long serialVersionUID = 1L;
+
     @Override
     protected void doGet(HttpServletRequest rq, HttpServletResponse rp) throws IOException, ServletException {
         String opc = (rq.getParameter("opc") != null) ? rq.getParameter("opc") : "list";
@@ -27,7 +29,7 @@ public class ServletAgentes extends HttpServlet {
             DAO_Agentes clidao = new DAO_Agentes();
             List<JB_Agentes> lista = clidao.seleccionar();
             rq.setAttribute("lista",lista);
-            rq.getRequestDispatcher("---Aqui va JSP---").forward(rq, rp);
+            rq.getRequestDispatcher("/Editables/Editable_AgentesSh.jsp").forward(rq, rp);
         }
 
         else if (opc.equals("mostrar")) {
@@ -71,9 +73,7 @@ public class ServletAgentes extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws IOException {
-        String op;
-        op=(String)rq.getSession().getAttribute("op");
-       if (op.equals("nuevo")) {
+        
 
     	   	int id_agent = Integer.parseInt(rq.getParameter("id_agent"));
     	   	String nombre = rq.getParameter("nombre");
@@ -83,8 +83,7 @@ public class ServletAgentes extends HttpServlet {
             JB_Agentes agent = new JB_Agentes(id_agent, nombre, especializacion, puesto);
             DAO_Agentes agentdao = new DAO_Agentes();
             agentdao.agregar(agent);
-            rp.sendRedirect("/ServletAgentes");
-        }
+            rp.sendRedirect("");
        
     }
 }
