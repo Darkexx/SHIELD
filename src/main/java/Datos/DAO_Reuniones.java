@@ -10,6 +10,7 @@ public class DAO_Reuniones {
 	public static final String insertSQL = "INSERT INTO reuniones(id_l,tema,hora) VALUES (?,?,?)";
 	public static final String updateSQL = "UPDATE reuniones SET tema = ?, hora = ? WHERE id_l = ?";
 	public static final String deleteSQL = "DELETE FROM reuniones WHERE id_l = ?";
+	public static final String consu = "Select lider.nombre as lider ,reuniones.tema,reuniones.hora from reuniones join lider on reuniones.id_l=lider.id_l";
 	
 	public List<JB_reuniones> seleccionar(){
 		Connection conn = null;
@@ -53,6 +54,54 @@ public class DAO_Reuniones {
 			return reuniones;
 		
 	}
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public List<JB_reuniones> cons(){
+		Connection conn = null;
+		Statement state = null;
+		ResultSet result = null;
+		JB_reuniones Re = null;
+		
+			List<JB_reuniones> reuniones = new ArrayList<>();
+			
+			try {
+				
+				conn = Conexion.getConnection();
+				state = conn.createStatement();
+				result = state.executeQuery(consu);
+				
+					while(result.next()) {
+						
+						//int id_ls = result.getInt("id_ls");
+						String lider = result.getString("lider");
+						String tema = result.getString("tema");
+						String hora = result.getString("hora");
+						
+						Re = new JB_reuniones(lider,tema,hora);
+						reuniones.add(Re);
+						
+					}
+					
+					Conexion.close(result);
+					Conexion.close(state);
+					Conexion.close(conn);
+					
+					for(JB_reuniones c: reuniones) {
+						System.out.println("id_l: " + c.getLider());
+						System.out.println("tema: " + c.getTema());
+						System.out.println("hora: " + c.getHora());
+					}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			return reuniones;
+		
+	}
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public int agregar(JB_reuniones Reunion) {
 		
