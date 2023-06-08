@@ -8,8 +8,8 @@ import java.util.List;
 public class DAO_Reuniones {
 	public static final String selectSQL = "SELECT * FROM reuniones";
 	public static final String insertSQL = "INSERT INTO reuniones(id_l,tema,hora) VALUES (?,?,?)";
-	public static final String updateSQL = "UPDATE reuniones SET tema = ?, hora = ? WHERE id_l = ?";
-	public static final String deleteSQL = "DELETE FROM reuniones WHERE id_l = ?";
+	public static final String updateSQL = "UPDATE reuniones SET id_l = ? ,tema = ?, hora = ? WHERE tema = ?";
+	public static final String deleteSQL = "DELETE FROM reuniones WHERE tema = ?";
 	public static final String consu = "Select lider.nombre as lider ,reuniones.tema,reuniones.hora from reuniones join lider on reuniones.id_l=lider.id_l";
 	
 	public List<JB_reuniones> seleccionar(){
@@ -144,7 +144,7 @@ public class DAO_Reuniones {
 			conn = Conexion.getConnection();
 			state = conn.prepareStatement(deleteSQL);
 			
-			state.setInt(1,Reunion.getIdL());
+			state.setString(1,Reunion.getTema());
 			registros = state.executeUpdate();
 			
 			if(registros>0) {
@@ -173,9 +173,11 @@ public class DAO_Reuniones {
 			conn = Conexion.getConnection();
 			state = conn.prepareStatement(updateSQL);
 			
-			state.setString(1,Reunion.getTema());
-			state.setString(2,Reunion.getHora());
-			state.setInt(3,Reunion.getIdL());
+			state.setInt(1,Reunion.getIdL());
+			state.setString(2,Reunion.getTema2());
+			state.setString(3,Reunion.getHora());
+			
+			state.setString(4,Reunion.getTema());
 			
 			registros = state.executeUpdate();
 			if(registros>0) {
