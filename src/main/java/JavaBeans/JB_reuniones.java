@@ -7,7 +7,7 @@ public class JB_reuniones implements Serializable{
 	private String hora;
 	///////////variables para consulta//////////////////
 	private String lider;/////////////mostrar nombre de lider
-	
+	private String tema2;
 	
 	public JB_reuniones() {
 		
@@ -28,6 +28,31 @@ public class JB_reuniones implements Serializable{
 	}
 	
 	//////////////////////////////////////////////////////////
+	
+	public JB_reuniones(
+			
+			int id_l,
+			String tema,
+			String tema2,
+			String hora
+			
+			) {
+			
+		this.id_l=id_l;
+		this.tema=tema;
+		this.hora=hora;
+			
+	}
+	
+	public JB_reuniones(
+			
+			String tema
+			
+			) {
+			
+		this.tema=tema;
+			
+	}
 	
 	public JB_reuniones(
 			
@@ -80,6 +105,15 @@ public class JB_reuniones implements Serializable{
 	public void setLider(String lider) {
 		this.lider = lider;
 	}
+
+	public String getTema2() {
+		return tema2;
+	}
+
+	public void setTema2(String tema2) {
+		this.tema2 = tema2;
+	}
+	
 	
 	
 }
