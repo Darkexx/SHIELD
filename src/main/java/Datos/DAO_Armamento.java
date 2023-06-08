@@ -10,6 +10,7 @@ public class DAO_Armamento {
 	public static final String insertSQL = "INSERT INTO armamento(id_ceo,tipo,cantidad,id_h) VALUES (?,?,?,?)";
 	public static final String updateSQL = "UPDATE armamento SET tipo = ?, cantidad = ?, id_h = ? WHERE id_ceo = ?";
 	public static final String deleteSQL = "DELETE FROM armamento WHERE id_ceo=?";
+	public static final String deleteSQLfromTipo = "DELETE FROM armamento WHERE tipo=?";
 	public static final String consuArm = "select stark.nombre as ceo,armamento.tipo,armamento.cantidad,heroes.nombre as grupo from armamento join stark on armamento.id_ceo=stark.id_ceo join heroes on armamento.id_h=heroes.id_h";
 	
 	public List<JB_Armamento> seleccionar(){
@@ -139,6 +140,7 @@ public class DAO_Armamento {
 	
 	public int borrar(JB_Armamento armamento) {
 		
+		System.out.println("Llego al dao armamento");
 		Connection conn = null;
 		PreparedStatement state = null;
 		int registros = 0;
@@ -146,7 +148,7 @@ public class DAO_Armamento {
 		try {
 			
 			conn = Conexion.getConnection();
-			state = conn.prepareStatement(deleteSQL);
+			state = conn.prepareStatement(deleteSQLfromTipo);
 			
 			state.setString(1,armamento.getIdCeo());
 			registros = state.executeUpdate();
