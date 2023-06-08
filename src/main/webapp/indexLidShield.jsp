@@ -41,7 +41,7 @@
 		<input type="submit" value="Juntas pendientes">
 	</form>
 	
-	<form action="//" method="get">
+	<form action="ServletArmamento" method="get">
 		<input type="submit" value="Transacciones STARK">
 	</form>
 	
