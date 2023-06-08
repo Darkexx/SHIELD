@@ -13,7 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.*;
 
-import Datos.Conexion;
 import JavaBeans.JB_Armamento;
 import Datos.DAO_Armamento;
 
@@ -23,56 +22,15 @@ public class ServletArmamento extends HttpServlet{
 	
 	//-----Get-----
 	protected void doGet(HttpServletRequest rq, HttpServletResponse rp) throws IOException, ServletException{
-		String opc = (rq.getParameter("opc") != null) ? rq.getParameter("opc") : "list";
-		
-		if(opc.equals("list")) {
 			
+			//Para mostra tabla armamento
 			DAO_Armamento armdao = new DAO_Armamento();
 			List<JB_Armamento> lista = armdao.consuAr();
 			rq.setAttribute("lista",lista);
+			
+			
 			rq.getRequestDispatcher("/Editables/Editable_Armamento.jsp").forward(rq, rp);
-			
-		}
 		
-		else if(opc.equals("mostrar")) {
-			
-			Conexion con = new Conexion();
-			Connection c = con.getConnection();
-			PreparedStatement ps;
-			ResultSet rs;
-			String id_ceo = rq.getParameter("id_ceo");
-			
-			try {
-				
-				String updateSql = "SELECT * FROM armamento WHERE id_ceo = ?";
-				ps = c.prepareStatement(updateSql);
-				ps.setString(1, id_ceo);
-				rs = ps.executeQuery();
-				JB_Armamento arm = new JB_Armamento();
-				while(rs.next()) {
-					
-					arm.setIdCeo(rs.getString("ceo"));
-					arm.setTipo(rs.getString("tipo"));
-					arm.setCantidad(rs.getInt("cantidad"));
-					arm.setIdH(rs.getInt("grupo"));
-					
-				}
-				rq.setAttribute("armamento", arm);
-				rq.getRequestDispatcher("/Editables/Editable_Armamento.jsp").forward(rq, rp);
-				
-			}catch (SQLException ex) {
-				System.out.println("Error en SQL " + ex.getMessage());
-			}
-		}
-		
-		else if(opc.equals("eliminar")) {
-			
-			String id_ceo = rq.getParameter("id_ceo");//Duda
-			JB_Armamento arm = new JB_Armamento(id_ceo);
-			DAO_Armamento armdao = new DAO_Armamento();
-			armdao.borrar(arm);
-			rp.sendRedirect("ServletArmamento");
-		}	
 	}
 	
 	protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws IOException {
