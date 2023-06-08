@@ -17,7 +17,7 @@ import Datos.Conexion;
 import JavaBeans.JB_Armamento;
 import Datos.DAO_Armamento;
 
-@WebServlet(name = "ServletArmamento", urlPatterns = {"/ServletArmamento"})
+@WebServlet("/ServletArmamento")
 
 public class ServletArmamento extends HttpServlet{
 	
@@ -28,9 +28,9 @@ public class ServletArmamento extends HttpServlet{
 		if(opc.equals("list")) {
 			
 			DAO_Armamento armdao = new DAO_Armamento();
-			List<JB_Armamento> lista = armdao.seleccionar();
+			List<JB_Armamento> lista = armdao.consuAr();
 			rq.setAttribute("lista",lista);
-			rq.getRequestDispatcher("-----Aqui va JSP-----").forward(rq, rp);
+			rq.getRequestDispatcher("/Editables/Editable_Armamento.jsp").forward(rq, rp);
 			
 		}
 		
@@ -51,14 +51,14 @@ public class ServletArmamento extends HttpServlet{
 				JB_Armamento arm = new JB_Armamento();
 				while(rs.next()) {
 					
-					arm.setIdCeo(rs.getString("id_ceo"));
+					arm.setIdCeo(rs.getString("ceo"));
 					arm.setTipo(rs.getString("tipo"));
 					arm.setCantidad(rs.getInt("cantidad"));
-					arm.setIdH(rs.getInt("id_h"));
+					arm.setIdH(rs.getInt("grupo"));
 					
 				}
 				rq.setAttribute("armamento", arm);
-				rq.getRequestDispatcher("-----Aqui va JSP-----").forward(rq, rp);
+				rq.getRequestDispatcher("/Editables/Editable_Armamento.jsp").forward(rq, rp);
 				
 			}catch (SQLException ex) {
 				System.out.println("Error en SQL " + ex.getMessage());
@@ -77,11 +77,7 @@ public class ServletArmamento extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws IOException {
 		
-		String op;
-		op=(String)rq.getSession().getAttribute("op");
 		
-		if(op.equals("nuevo")) {
-			
 			String id_ceo = rq.getParameter("id_ceo");
 			String tipo = rq.getParameter("tipo");
 			int cantidad = Integer.parseInt(rq.getParameter("cantidad"));
@@ -90,9 +86,7 @@ public class ServletArmamento extends HttpServlet{
 			JB_Armamento arma = new JB_Armamento(id_ceo,tipo,cantidad,id_h);
 			DAO_Armamento armadao = new DAO_Armamento();
 			armadao.agregar(arma);
-			rp.sendRedirect("/ServletArmamento");
-		}
-		
+			rp.sendRedirect("");
 	}
 
 }
