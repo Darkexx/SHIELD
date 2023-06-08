@@ -71,11 +71,35 @@
 	
 	<br>
 	
-	<form action="" method="get">
 	
-		<input id="id" type="text" name="id_h">
+	<form action="ServletArmamentoDelete" method="get">
+	
+<!-- 		<input id="id" type="text" name="id_h"> -->
+<!-- 		<input type="submit" value="Eliminar Transaccion"> -->
+	<%
+			@SuppressWarnings("unchecked")
+			List<JB_Armamento> Armas = (List<JB_Armamento>) request.getAttribute("lista");
+		
+		%>
+		
+		<label for="ag">Transaccion a eliminar</label>
+		<select id="ag" name="tipo">
+		
+			<% for(JB_Armamento Armamento : Armas){ %>	
+		
+				<option value = "<%= Armamento.getTipo() %>"> 
+				
+					<%= Armamento.getTipo() %> 
+				
+				</option>
+			
+			<%}%>
+			
+		</select>
+		
 		<input type="submit" value="Eliminar Transaccion">
 		
 	</form>
+	
 </body>
 </html>
