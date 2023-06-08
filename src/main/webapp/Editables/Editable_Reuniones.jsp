@@ -57,7 +57,7 @@
 		<input type="submit" value="Agrega reunion">
 	</form>
 	
-	<form action="" method="get">
+	<form action="ServletReunionesOptionUp" method="get">
 	
 		<input type="submit" value="Actualizar reunion">
 		
@@ -65,10 +65,10 @@
 	
 	<br>
 	
-	<form action="" method="get">
+	<form action="ServletReunionesDelete" method="get">
 	
-		<input id="id_int" type="text" name="id_i">
-		<input type="submit" value="Eliminar reunion">
+		<input id="id_int" type="text" name="tema">
+		<input type="submit" value="Eliminar reunion(por nombre)">
 		
 	</form>
 
