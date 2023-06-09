@@ -48,6 +48,35 @@ public class Servlet_Login extends HttpServlet{
                     RequestDispatcher dispatcher = request.getRequestDispatcher("indexLidHer.jsp");
                     dispatcher.forward(request, response);
                 }
+                
+                else if (usur.getRoll().equals("Integrante")) {
+                    //Si se trata de un Lider_Heroes obtenemos su nombre 
+                	
+                	int idint = Integer.parseInt(usur.getId_us());
+                	
+                    DAO_Lider lidao = new DAO_Lider();
+                    String nomlid = lidao.retnom(idint);
+
+                    request.setAttribute("nomlider",nomlid);
+
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("");
+                    dispatcher.forward(request, response);
+                }
+                
+                else if (usur.getRoll().equals("Agente")) {
+                    //Si se trata de un Lider_Heroes obtenemos su nombre 
+                	
+                	int idint = Integer.parseInt(usur.getId_us());
+                	
+                    DAO_Lider lidao = new DAO_Lider();
+                    String nomlid = lidao.retnom(idint);
+
+                    request.setAttribute("nomlider",nomlid);
+
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("");
+                    dispatcher.forward(request, response);
+                }
+                
                 else {
                 	
                 	System.out.println("no existe roll");//JSP mensaje de inexistencia de roll
