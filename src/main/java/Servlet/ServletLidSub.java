@@ -38,16 +38,15 @@ public class ServletLidSub extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws IOException {
 		
+			String id_ls = rq.getParameter("id_ls");
+			String nombre = rq.getParameter("nombre");
+			String rango = rq.getParameter("rango");
+			String id_sub = rq.getParameter("id_sub");
 		
-			//String id_at = rq.getParameter("id_at");
-			//int id_h = Integer.parseInt(rq.getParameter("id_h"));
-			//int id_agent = Integer.parseInt(rq.getParameter("id_agent"));
-			//String fecha = rq.getParameter("fecha");
+			JB_Lideres_Subdivision lidsub = new JB_Lideres_Subdivision(id_ls,nombre,rango,id_sub);
+			DAO_Lideres_Subdv lidsubdao = new DAO_Lideres_Subdv();
 			
-			//JB_Involucrados inv = new JB_Involucrados(id_at,id_h,id_agent,fecha);
-			//DAO_Involucrados invdao = new DAO_Involucrados();
-			
-			//invdao.agregar(inv);
+			lidsubdao.agregar(lidsub);
 			
 			rp.sendRedirect("");
 		
