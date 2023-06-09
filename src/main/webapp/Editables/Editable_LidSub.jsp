@@ -59,11 +59,14 @@
     <br>
     <br>
     
-    <form action="ServletArmamentoOptAg" method="get">
+    <form action="ServletLidSubOptAg" method="get">
 		<input type="submit" value="Agregar Lider de Subdivision">
 	</form>
 	
-	<form action="ServletArmamentoOptUp" method="get">
+	
+	
+	
+	<form action="ServletLidSubOptUp" method="get">
 	
 		<input type="submit" value="Actualizar datos">
 		
@@ -72,8 +75,31 @@
 	<br>
 	
 	
-	<form action="ServletArmamentoDelete" method="get">
+	
+	
+	
+	<form action="ServletLidSubDelete" method="get">
 
+		<%
+			@SuppressWarnings("unchecked")
+			List<JB_Lideres_Subdivision> sub = (List<JB_Lideres_Subdivision>) request.getAttribute("lista");
+		
+		%>
+		
+		<label for="ag">Lider de subdivicion a eliminar</label>
+		<select id="ag" name="id_ls">
+		
+			<% for(JB_Lideres_Subdivision Subs : sub){ %>	
+		
+				<option value = "<%= Subs.getIdLs() %>"> 
+				
+					<%= Subs.getNombre() %> 
+				
+				</option>
+			
+			<%}%>
+			
+		</select>
 		
 		<input type="submit" value="Eliminar Lider de Subdivision">
 		
