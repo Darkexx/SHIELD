@@ -45,7 +45,7 @@
 		<input type="submit" value="Transacciones STARK">
 	</form>
 	
-	<form action="//" method="get">
+	<form action="ServletLidSub" method="get">
 		<input type="submit" value="Subdivision y lideres">
 	</form>
 	
