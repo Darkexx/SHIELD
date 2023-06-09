@@ -27,6 +27,23 @@ public class JB_Lideres_Subdivision implements Serializable{
 			
 	}
 	
+	////////////////////////////////////////////////////////////////////////////
+	
+	
+	public JB_Lideres_Subdivision(
+			
+			String id_ls
+			
+			) {
+			
+		this.id_ls=id_ls;
+			
+	}
+	
+	
+	/////////////////////////////////////////////////////////////////////////////
+	
+	
 	// Getter y Setter ID_ls
 	public String getIdLs() {
 	    return id_ls;
