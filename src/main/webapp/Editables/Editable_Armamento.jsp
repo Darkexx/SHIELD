@@ -63,7 +63,7 @@
 		<input type="submit" value="Agregar Transaccion">
 	</form>
 	
-	<form action="" method="get">
+	<form action="ServletArmamentoOptUp" method="get">
 	
 		<input type="submit" value="Actualizar datos">
 		
