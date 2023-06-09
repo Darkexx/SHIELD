@@ -9,6 +9,7 @@ public class DAO_Armamento {
 	public static final String selectSQL = "SELECT * FROM armamento";
 	public static final String insertSQL = "INSERT INTO armamento(id_ceo,tipo,cantidad,id_h) VALUES (?,?,?,?)";
 	public static final String updateSQL = "UPDATE armamento SET tipo = ?, cantidad = ?, id_h = ? WHERE id_ceo = ?";
+	public static final String updateSQLCons = "UPDATE armamento SET id_ceo = ?,tipo = ?, cantidad = ?, id_h = ? WHERE tipo = ?";
 	public static final String deleteSQL = "DELETE FROM armamento WHERE id_ceo=?";
 	public static final String deleteSQLfromTipo = "DELETE FROM armamento WHERE tipo=?";
 	public static final String consuArm = "select stark.nombre as ceo,armamento.tipo,armamento.cantidad,heroes.nombre as grupo from armamento join stark on armamento.id_ceo=stark.id_ceo join heroes on armamento.id_h=heroes.id_h";
@@ -177,13 +178,14 @@ public class DAO_Armamento {
 		try {
 			
 			conn = Conexion.getConnection();
-			state = conn.prepareStatement(updateSQL);
+			state = conn.prepareStatement(updateSQLCons);
 			
 			
-			state.setString(1,armamento.getTipo());
-			state.setInt(2,armamento.getCantidad());
-			state.setInt(3,armamento.getIdH());
-			state.setString(4,armamento.getIdCeo());
+			state.setString(1,armamento.getIdCeo());
+			state.setString(2,armamento.getTipo2());
+			state.setInt(3,armamento.getCantidad());
+			state.setInt(4,armamento.getIdH());
+			state.setString(5,armamento.getTipo());
 			
 			registros = state.executeUpdate();
 			if(registros>0) {
