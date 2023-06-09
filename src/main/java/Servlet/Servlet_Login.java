@@ -50,16 +50,8 @@ public class Servlet_Login extends HttpServlet{
                 }
                 
                 else if (usur.getRoll().equals("Integrante")) {
-                    //Si se trata de un Lider_Heroes obtenemos su nombre 
-                	
-                	int idint = Integer.parseInt(usur.getId_us());
-                	
-                    DAO_Lider lidao = new DAO_Lider();
-                    String nomlid = lidao.retnom(idint);
 
-                    request.setAttribute("nomlider",nomlid);
-
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("indexIntegrante.jsp");
                     dispatcher.forward(request, response);
                 }
                 
