@@ -2,6 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="JavaBeans.JB_Heroes" %>
 <%@ page import="JavaBeans.JB_Agentes" %>
+<%@ page import="JavaBeans.JB_Ataque" %>
 
 <html>
 
@@ -18,8 +19,27 @@
 
 	<form action="ServletInvolucrados" method="post">
 
-		<label for="id"> Ataque </label>
-		<input id="id_l" type="text" name="id_at">
+		<%
+		
+			@SuppressWarnings("unchecked")
+			List<JB_Ataque> Ataques = (List<JB_Ataque>) request.getAttribute("ataques");
+		
+		%>
+		
+		<label for="her">Ataques</label>
+		<select id="her" name="id_at">
+		
+			<% for(JB_Ataque ataque : Ataques){ %>	
+		
+				<option value = "<%= ataque.getIdAt() %>"> 
+				
+					<%= ataque.getNombre() %> 
+				
+				</option>
+			
+			<%}%>
+			
+		</select>
 		
 		<br>
 		<br>
