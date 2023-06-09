@@ -8,8 +8,10 @@ import java.util.*;
 
 import JavaBeans.JB_Heroes;
 import JavaBeans.JB_Agentes;
+import JavaBeans.JB_Ataque;
 import Datos.DAO_Heroes;
 import Datos.DAO_Agentes;
+import Datos.DAO_Ataques;
 
 @WebServlet("/ServletInvolucradosOptionHeroe")
 
@@ -48,6 +50,19 @@ public class ServletInvolucradosOptionHeroe extends HttpServlet{
 	        }
 			rq.setAttribute("agentes", lista2);
 			
+			
+			//Para ataques
+			DAO_Ataques atadao = new DAO_Ataques();
+			List<JB_Ataque> lista3 = atadao.seleccionar();
+			
+			if (lista3.isEmpty()) {
+	          	System.out.println("void como el void");
+	        }
+	        else {
+	        	System.out.println("Aqui hay datos de heroes we");
+	        }
+			
+			rq.setAttribute("ataques",lista3);
 			
 			//Dirige a Involucrados
 			rq.getRequestDispatcher("/Editables/Agrega_Involucrados.jsp").forward(rq, rp);
