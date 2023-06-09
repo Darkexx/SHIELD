@@ -9,6 +9,7 @@ public class JB_Armamento implements Serializable{
 	//////Variables para consulta//////
 	private String ceo;
 	private String grupo;
+	private String tipo2;
 
 	public JB_Armamento() {
 		
@@ -41,6 +42,24 @@ public class JB_Armamento implements Serializable{
 			
 	}
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public JB_Armamento(
+			
+			String tipo,
+			String id_ceo,
+			String tipo2,
+			int cantidad,
+			int id_h
+			
+			) {
+		
+		this.tipo=tipo;
+		this.id_ceo=id_ceo;
+		this.tipo2=tipo2;
+		this.cantidad=cantidad;
+		this.id_h=id_h;
+			
+	}
 	
 	public JB_Armamento(
 			
@@ -114,5 +133,15 @@ public class JB_Armamento implements Serializable{
 	public void setGrupo(String grupo) {
 		this.grupo = grupo;
 	}
+
+	public String getTipo2() {
+		return tipo2;
+	}
+
+	public void setTipo2(String tipo2) {
+		this.tipo2 = tipo2;
+	}
+	
+	
 	
 }
