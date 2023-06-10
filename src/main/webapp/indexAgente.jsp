@@ -7,10 +7,20 @@
 
 	<head>
 		<title> SHIELD </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
 <body>
+
+	<div class="overlay"></div>
+	<div class="scanline"></div>
+	<div class="wrapper">
+  	<div class="content clearfix">
+
 <h2>Bienvenido Agente de Shield</h2>
 
 	<form action="ServletHeroesNoEdit" method="get">
@@ -48,6 +58,9 @@
 	<form action="ServletLidSubNoEdit" method="get">
 		<input type="submit" value="Subdivision y lideres">
 	</form>
+	
+	</div>
+	</div>
 	
 </body>
 </html>
