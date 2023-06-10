@@ -7,11 +7,20 @@
 
 	<head>
 		<title> Info Extraterrestre </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
 <body>
 <h2>Info Amenaza Extraterrestre:</h2>
+
+		<div class="overlay"></div>
+		<div class="scanline"></div>
+		<div class="wrapper">
+  		<div class="content clearfix">
 
 	<jsp:useBean id="t_at" class="JavaBeans.JB_Tip_Ataque" scope="request"/>
 		<table width="100%">
@@ -55,6 +64,9 @@
     
     <br>
     <br>
+	
+	</div>
+	</div>
 	
 </body>
 </html>

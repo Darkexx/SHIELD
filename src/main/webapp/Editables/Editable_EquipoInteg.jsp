@@ -7,10 +7,18 @@
 
 	<head>
 		<title> Integrantes de grupos (Editable) </title>
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 <body>
 <h2>Integrantes de equipos</h2>
+
+	<div class="overlay"></div>
+	<div class="scanline"></div>
+	<div class="wrapper">
+  	<div class="content clearfix">
 
 	<jsp:useBean id="Integrantes" class="JavaBeans.JB_Integrantes" scope="request"/>
 		<table width="100%">
@@ -71,6 +79,9 @@
 		<input type="submit" value="Eliminar Integrante">
 		
 	</form>
+
+	</div>
+	</div>
 
 </body>
 </html>

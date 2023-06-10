@@ -8,11 +8,21 @@
 
 	<head>
 		<title> Actualizar agentes </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
 <body>
 <h2>Introduzca los datos a actualizar</h2>
+
+
+	<div class="overlay"></div>
+	<div class="scanline"></div>
+	<div class="wrapper">
+  	<div class="content clearfix">
 
 	
 	<label>Este es el jsp para actualizar agentes</label>
@@ -52,19 +62,19 @@
 		<br>
 		<br>
 		
-		<label for="nombre"> Nombre </label>
+		<label for="nombre"> Nombre >></label>
 		<input id="nom_her" type="text" name="nombre">
 		
 		<br>
 		<br>
 		
-		<label for="esp"> Especializacion </label>
+		<label for="esp"> Especializacion >></label>
 		<input id="esp" type="text" name="especializacion">
 		
 		<br>
 		<br>
 		
-		<label for="pues"> Puesto </label>
+		<label for="pues"> Puesto >></label>
 		<input id="pues" type="text" name="puesto">
 		
 		<br>
@@ -74,6 +84,9 @@
 	
 	</form>
 	
+	
+	</div>
+	</div>
 	
 </body>
 </html>

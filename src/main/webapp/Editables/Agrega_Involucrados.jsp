@@ -8,6 +8,10 @@
 
 	<head>
 		<title> SHIELD </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
@@ -15,7 +19,10 @@
 <h2>Inserte los datos para agregar un nuevo evento</h2>
 
 
-<!-- 	Aqui no se redirije como ../ServletInvolucrados ya que no viene de otro jsp -->
+		<div class="overlay"></div>
+		<div class="scanline"></div>
+		<div class="wrapper">
+  		<div class="content clearfix">
 
 	<form action="ServletInvolucrados" method="post">
 
@@ -104,6 +111,8 @@
 	
 	</form>
 	
+	</div>
+	</div>
 	
 </body>
 </html>

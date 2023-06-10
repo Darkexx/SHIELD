@@ -8,12 +8,20 @@
 
 	<head>
 		<title> Actualizar Involucrados </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
 <body>
 <h2>Bienvenido a SHIELD</h2>
 
+		<div class="overlay"></div>
+		<div class="scanline"></div>
+		<div class="wrapper">
+  		<div class="content clearfix">
 	
 	<label>Este es el jsp para actualizar ataques</label>
 	
@@ -74,6 +82,8 @@
 	
 	</form>
 	
+	</div>
+	</div>
 	
 </body>
 </html>

@@ -8,12 +8,18 @@
 
 	<head>
 		<title> Actualizar Involucrados </title>
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
 	</head>
 
 
 <body>
 <h2>Bienvenido a SHIELD</h2>
 
+		<div class="overlay"></div>
+		<div class="scanline"></div>
+		<div class="wrapper">
+  		<div class="content clearfix">
 	
 	<label>Este es el jsp para actualizar ataques</label>
 	
@@ -52,25 +58,25 @@
 		<br>
 		<br>
 		
-		<label for="nombre"> Nombre </label>
+		<label for="nombre"> Nombre >></label>
 		<input id="nom_her" type="text" name="nombre">
 		
 		<br>
 		<br>
 		
-		<label for="id_m"> Muertes </label>
+		<label for="id_m"> Muertes >></label>
 		<input id="id_i" type="text" name="muertes">
 		
 		<br>
 		<br>
 		
-		<label for="id_h"> heridos </label>
+		<label for="id_h"> heridos >></label>
 		<input id="id_i" type="text" name="heridos">
 		
 		<br>
 		<br>
 		
-		<label for="id_p"> Pais </label>
+		<label for="id_p"> Pais >></label>
 		<input id="id_i" type="text" name="pais">
 		
 		<br>
@@ -80,6 +86,8 @@
 	
 	</form>
 	
+	</div>
+	</div>
 	
 </body>
 </html>

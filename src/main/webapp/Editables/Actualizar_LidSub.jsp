@@ -7,12 +7,20 @@
 
 	<head>
 		<title> Actualizar Lider de Subdivision </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
 <body>
 <h2>Inserte los datos para actualizar un lider de subdivision</h2>
 
+	<div class="overlay"></div>
+	<div class="scanline"></div>
+	<div class="wrapper">
+  	<div class="content clearfix">
 
 	<form action="ServletLidSubUpdate" method="get">
 	
@@ -43,13 +51,13 @@
 		<br>
 		
 		
-		<label for="arm"> Nombre </label>
+		<label for="arm"> Nombre >></label>
 		<input id="arm" type="text" name="nombre">
 		
 		<br>
 		<br>
 		
-		<label for="arm"> Rango </label>
+		<label for="arm"> Rango >></label>
 		<input id="arm" type="text" name="rango">
 		
 		<br>
@@ -88,6 +96,8 @@
 	
 	</form>
 	
+	</div>
+	</div>
 	
 </body>
 </html>

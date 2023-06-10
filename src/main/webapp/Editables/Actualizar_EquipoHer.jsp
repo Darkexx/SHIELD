@@ -7,11 +7,18 @@
 
 	<head>
 		<title> SHIELD </title>
+		<link rel="stylesheet" type="text/css" href="../Style.css" />
+		<script src="sifunc.js"></script>
 	</head>
 
 
 <body>
 <h2>Aqui se actualizan equipos equipos</h2>
+
+		<div class="overlay"></div>
+		<div class="scanline"></div>
+		<div class="wrapper">
+  		<div class="content clearfix">
 
 
 	<form action="../ServletHeroesUpdate" method="get">
@@ -44,6 +51,8 @@
 	
 	</form>
 	
+	</div>
+	</div>
 	
 </body>
 </html>

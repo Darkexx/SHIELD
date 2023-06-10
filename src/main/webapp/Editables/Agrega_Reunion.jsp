@@ -8,12 +8,20 @@
 
 	<head>
 		<title> Agregar reuniones </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
 <body>
 <h2>Actualiza los datos de las reuniones</h2>
 
+		<div class="overlay"></div>
+		<div class="scanline"></div>
+		<div class="wrapper">
+  		<div class="content clearfix">
 	
 	<label>Este es el jsp para agregar reuniones</label>
 	
@@ -52,13 +60,13 @@
 		<br>
 		<br>
 		
-		<label for="nombre"> Tema </label>
+		<label for="nombre"> Tema >></label>
 		<input id="nom_her" type="text" name="tema">
 		
 		<br>
 		<br>
 		
-		<label for="id_m"> Hora </label>
+		<label for="id_m"> Hora >></label>
 		<input id="id_i" type="text" name="hora">
 		
 		<br>
@@ -68,6 +76,8 @@
 	
 	</form>
 	
+	</div>
+	</div>
 	
 </body>
 </html>

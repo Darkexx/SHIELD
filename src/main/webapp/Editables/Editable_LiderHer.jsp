@@ -8,13 +8,18 @@
 
 	<head>
 		<title> Lideres de Heroes </title>
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
 	</head>
 
 
 <body>
 <h2>Bienvenido a SHIELD</h2>
 
-	
+	<div class="overlay"></div>
+	<div class="scanline"></div>
+	<div class="wrapper">
+  	<div class="content clearfix">
 	
 	<jsp:useBean id="Heroes" class="JavaBeans.JB_Heroes" scope="request"/>
 		<table width="100%">
@@ -75,5 +80,9 @@
 		<input type="submit" value="Eliminar Lider">
 		
 	</form>
+	
+	</div>
+	</div>
+	
 </body>
 </html>

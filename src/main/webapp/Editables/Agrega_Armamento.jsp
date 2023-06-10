@@ -7,11 +7,20 @@
 
 	<head>
 		<title> Agrega Transaccion </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
 <body>
 <h2>Inserte los datos para agregar una nueva transaccion</h2>
+
+		<div class="overlay"></div>
+		<div class="scanline"></div>
+		<div class="wrapper">
+  		<div class="content clearfix">
 
 
 <!-- 	Aqui no se redirije como ../ServletInvolucrados ya que no viene de otro jsp -->
@@ -45,7 +54,7 @@
 		
 		
 		
-		<label for="arm"> Tipo </label>
+		<label for="arm"> Tipo >></label>
 		<input id="arm" type="text" name="tipo">
 		
 		<br>
@@ -53,7 +62,7 @@
 		
 		
 		
-		<label for="cant"> Cantidad </label>
+		<label for="cant"> Cantidad >></label>
 		<input id="cant" type="text" name="cantidad">
 		
 		<br>
@@ -87,6 +96,8 @@
 	
 	</form>
 	
+	</div>
+	</div>
 	
 </body>
 </html>

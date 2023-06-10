@@ -9,11 +9,21 @@
 
 	<head>
 		<title> Actualizar reuniones </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
 <body>
 <h2>Actualiza reunion</h2>
+
+
+		<div class="overlay"></div>
+		<div class="scanline"></div>
+		<div class="wrapper">
+  		<div class="content clearfix">
 
 	
 	<label>Este es el jsp para actualizar reuniones</label>
@@ -81,13 +91,13 @@
 		<br>
 		<br>
 		
-		<label for="nombre"> Actualizar tema </label>
+		<label for="nombre"> Actualizar tema >></label>
 		<input id="nom_her" type="text" name="tema2">
 		
 		<br>
 		<br>
 		
-		<label for="id_l"> Hora </label>
+		<label for="id_l"> Hora >></label>
 		<input id="id_i" type="text" name="hora">
 		
 		<br>
@@ -97,6 +107,8 @@
 	
 	</form>
 	
+	</div>
+	</div>
 	
 </body>
 </html>

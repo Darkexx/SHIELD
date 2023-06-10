@@ -8,12 +8,21 @@
 
 	<head>
 		<title> Transacciones Stark </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
 <body>
 <h2>Compras a Stark</h2>
 
+	
+	<div class="overlay"></div>
+	<div class="scanline"></div>
+	<div class="wrapper">
+  	<div class="content clearfix">
 	
 	
 	<jsp:useBean id="armamento" class="JavaBeans.JB_Armamento" scope="request"/>
@@ -100,6 +109,9 @@
 		<input type="submit" value="Eliminar Transaccion">
 		
 	</form>
+	
+	</div>
+	</div>
 	
 </body>
 </html>
