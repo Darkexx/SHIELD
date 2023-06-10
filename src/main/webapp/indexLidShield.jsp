@@ -7,10 +7,18 @@
 
 	<head>
 		<title> SHIELD </title>
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
 	</head>
 
 
 <body>
+
+	<div class="overlay"></div>
+	<div class="scanline"></div>
+	<div class="wrapper">
+  	<div class="content clearfix">
+
 <h2>Bienvenido Lider de Shield</h2>
 
 	<form action="ServletHeroes" method="get">
@@ -48,6 +56,9 @@
 	<form action="ServletLidSub" method="get">
 		<input type="submit" value="Subdivision y lideres">
 	</form>
+	
+	</div>
+	</div>
 	
 </body>
 </html>
