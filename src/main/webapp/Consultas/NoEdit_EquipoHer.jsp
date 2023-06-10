@@ -8,10 +8,20 @@
 
 	<head>
 		<title> SHIELD </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 
 <body>
+
+	<div class="overlay"></div>
+	<div class="scanline"></div>
+	<div class="wrapper">
+  	<div class="content clearfix">
+
 <h2>Equipos de heroes</h2>
 
 	
@@ -55,6 +65,9 @@
     %>
     
     </table>
+    
+    </div>
+    </div>
     
 </body>
 </html>

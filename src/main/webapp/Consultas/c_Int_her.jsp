@@ -7,9 +7,19 @@
 
 	<head>
 		<title> Integrantes de grupos </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 <body>
+
+	<div class="overlay"></div>
+	<div class="scanline"></div>
+	<div class="wrapper">
+  	<div class="content clearfix">
+
 <h2>Agentes</h2>
 
 	<jsp:useBean id="Integrantes" class="JavaBeans.JB_Integrantes" scope="request"/>
@@ -49,6 +59,9 @@
     %>
     
     </table>
+
+	</div>
+	</div>
 
 </body>
 </html>

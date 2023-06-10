@@ -7,9 +7,19 @@
 
 	<head>
 		<title> Agentes de Shield (No Editable) </title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+		<script src="sifunc.js"></script>
+		
 	</head>
 
 <body>
+
+	<div class="overlay"></div>
+	<div class="scanline"></div>
+	<div class="wrapper">
+  	<div class="content clearfix">
+
 <h2>Integrantes de equipos</h2>
 
 	<jsp:useBean id="Integrantes" class="JavaBeans.JB_Agentes" scope="request"/>
@@ -54,6 +64,10 @@
 
 	<br>
     <br>
+
+	</div>
+	</div>
+
 
 </body>
 </html>
